@@ -1,5 +1,6 @@
-﻿using BestStoreMVC.Models;
-using BestStoreMVC.Services;
+﻿using BestStoreMVC.Data;
+using BestStoreMVC.Dto;
+using BestStoreMVC.Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BestStoreMVC.Controllers
 {
-	public class AccountController : Controller
+    public class AccountController : Controller
 	{
 		private readonly UserManager<ApplicationUser> userManager;
 		private readonly SignInManager<ApplicationUser> signInManager;

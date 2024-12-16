@@ -1,4 +1,4 @@
-﻿using BestStoreMVC.Models;
+﻿using BestStoreMVC.Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BestStoreMVC.Controllers
 {
-	[Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
 	[Route("/Admin/[controller]/{action=Index}/{id?}")]
 	public class UsersController : Controller
 	{

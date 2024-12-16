@@ -1,0 +1,106 @@
+﻿@using Microsoft.AspNetCore.Html;
+@model IEnumerable<BestStoreMVC.Dto.BookDto>
+@{
+    int pageIndex = (int)ViewData["PageIndex"]!;
+    int totalPages = (int)ViewData["TotalPages"]!;
+
+    string search = (string)ViewData["Search"]!;
+
+    string column = (string)ViewData["Column"]!;
+    string orderBy = (string)ViewData["OrderBy"]!;
+
+    HtmlString getArrow(string tableColumn)
+    {
+        if (tableColumn != column) return new HtmlString("");
+
+        if (orderBy == "desc")
+        {
+            return new HtmlString("<i class='bi bi-arrow-down'></i>");
+        }
+
+        return new HtmlString("<i class='bi bi-arrow-up'></i>");
+    }
+}
+
+<h2 class="text-center mb-5">List of Books</h2>
+
+<div class="row mb-5">
+    <div class="col">
+        <a class="btn btn-primary" asp-controller="Books" asp-action="Create">New Book</a>
+    </div>
+    <div class="col">
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" name="search" value="@search" placeholder="Search by Name or Author" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function sortTable(column) {
+        let orderBy = "desc"
+        let currentColumn = "@column";
+        let currentOrder = "@orderBy";
+        if (column === currentColumn) {
+            if (currentOrder == "asc") orderBy = "desc";
+            else orderBy = "asc";
+        }
+        window.location.href = "?search=@(search)&column=" + column + "&orderBy=" + orderBy
+    }
+</script>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            @* <th style="cursor: pointer;" onclick="sortTable('Id')">ID @getArrow("Id")</th> *@
+            <th style="cursor: pointer;" onclick="sortTable('Title')">Title @getArrow("Name")</th>
+            <th style="cursor: pointer;" onclick="sortTable('Author')">Author @getArrow("Author")</th>
+            <th style="cursor: pointer;" onclick="sortTable('Category')">Category @getArrow("Category")</th>
+            <th style="cursor: pointer;" onclick="sortTable('Price')">Price @getArrow("Price")</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var Book in Model)
+        {
+            <tr>
+               @*  <td>@Book.Id</td> *@
+                <td>@Book.Title</td>
+                <td>@Book.Author</td>
+                <td>@Book.CategoryName</td>
+                <td>@(Book.Price)$</td>
+                <td> <img src="/Books/@Book.ImageFileName" style="width: 50px; height: 50px;" /></td>
+                <td style="white-space:nowrap">
+                    <a class="btn btn-primary btn-sm" asp-controller="Books" asp-action="Edit" 
+                        asp-route-id="@Book.Id">Edit</a>
+                    <form asp-action="DeleteBook" asp-controller="Books" asp-route-id="@Book.Id" method="post" style="display:inline;">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<nav>
+    <ul class="pagination">
+        @for(int i = 1; i <= totalPages; i++)
+        {
+            string active = "";
+            if (i == pageIndex) active = "active";
+            <li class="page-item @active"><a class="page-link" asp-route-pageIndex="@i"
+                asp-route-search="@search" asp-route-column="@column" asp-route-orderBy="@orderBy">@i</a></li>
+        }
+    </ul>
+</nav>
+
+@section Scripts {
+    <!-- Include the JavaScript file for DataTables or custom scripts if needed -->
+    <script src="~/js/book.js"></script>
+}

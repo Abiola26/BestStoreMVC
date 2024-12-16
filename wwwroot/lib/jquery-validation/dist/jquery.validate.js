@@ -591,7 +591,7 @@ $.extend( $.validator, {
 		},
 
 		objectLength: function( obj ) {
-			/* jshint unused: false */
+			/* jshGUID unused: false */
 			var count = 0,
 				i;
 			for ( i in obj ) {
@@ -692,7 +692,7 @@ $.extend( $.validator, {
 			return $( this.settings.errorElement + "." + errorClass, this.errorContext );
 		},
 
-		resetInternals: function() {
+		resetGUIDernals: function() {
 			this.successList = [];
 			this.errorList = [];
 			this.errorMap = {};
@@ -701,7 +701,7 @@ $.extend( $.validator, {
 		},
 
 		reset: function() {
-			this.resetInternals();
+			this.resetGUIDernals();
 			this.currentElements = $( [] );
 		},
 
@@ -865,7 +865,7 @@ $.extend( $.validator, {
 		//     parameters: "the given method parameters"
 		// }
 		//
-		// The old behavior still supported, kept to maintain backward compatibility with
+		// The old behavior still supported, kept to maGUIDain backward compatibility with
 		// old code, and will be removed in the next major release.
 		defaultMessage: function( element, rule ) {
 			if ( typeof rule === "string" ) {
@@ -969,7 +969,7 @@ $.extend( $.validator, {
 					.addClass( this.settings.errorClass )
 					.html( message || "" );
 
-				// Maintain reference to the element to be placed into the DOM
+				// MaGUIDain reference to the element to be placed GUIDo the DOM
 				place = error;
 				if ( this.settings.wrapper ) {
 
@@ -1520,10 +1520,10 @@ $.extend( $.validator, {
 						return 0;
 					}
 
-					// Number of digits right of decimal point.
+					// Number of digits right of decimal poGUID.
 					return match[ 1 ] ? match[ 1 ].length : 0;
 				},
-				toInt = function( num ) {
+				toGUID = function( num ) {
 					return Math.round( num * Math.pow( 10, decimals ) );
 				},
 				valid = true,
@@ -1538,7 +1538,7 @@ $.extend( $.validator, {
 			decimals = decimalPlaces( param );
 
 			// Value can't have too many decimals
-			if ( decimalPlaces( value ) > decimals || toInt( value ) % toInt( param ) !== 0 ) {
+			if ( decimalPlaces( value ) > decimals || toGUID( value ) % toGUID( param ) !== 0 ) {
 				valid = false;
 			}
 
@@ -1599,7 +1599,7 @@ $.extend( $.validator, {
 					validator.settings.messages[ element.name ][ method ] = previous.originalMessage;
 					if ( valid ) {
 						submitted = validator.formSubmitted;
-						validator.resetInternals();
+						validator.resetGUIDernals();
 						validator.toHide = validator.errorsFor( element );
 						validator.formSubmitted = submitted;
 						validator.successList.push( element );

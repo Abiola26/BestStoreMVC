@@ -1,5 +1,5 @@
-﻿using BestStoreMVC.Models;
-using BestStoreMVC.Services;
+﻿using BestStoreMVC.Data;
+using BestStoreMVC.Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -45,10 +45,10 @@ namespace BestStoreMVC.Controllers
         }
 
 
-        public IActionResult Details(int id)
+        public IActionResult Details(Guid id)
         {
             var order = context.Orders.Include(o => o.Client).Include(o => o.Items)
-                .ThenInclude(oi => oi.Product).FirstOrDefault(o => o.Id == id);
+                .ThenInclude(oi => oi.Book).FirstOrDefault(o => o.Id == id);
 
 
             if (order == null)

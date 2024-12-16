@@ -1,5 +1,5 @@
-﻿using BestStoreMVC.Models;
-using BestStoreMVC.Services;
+﻿using BestStoreMVC.Data;
+using BestStoreMVC.Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -56,7 +56,7 @@ namespace BestStoreMVC.Controllers
 
             // create the request body
             JsonObject createOrderRequest = new JsonObject();
-            createOrderRequest.Add("intent", "CAPTURE");
+            createOrderRequest.Add("GUIDent", "CAPTURE");
 
             JsonObject amount = new JsonObject();
             amount.Add("currency_code", "USD");

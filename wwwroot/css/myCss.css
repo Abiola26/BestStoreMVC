@@ -173,7 +173,7 @@ h2.text-center {
     padding: 10px 20px;
     border-radius: 5px;
     color: white;
-    cursor: pointer;
+    cursor: poGUIDer;
 }
 
     .select-address-button:hover, .cancel-button:hover {

@@ -62,9 +62,9 @@ $.validator.addMethod( "abaRoutingNumber", function( value ) {
 	// Calc the checksum
 	// https://en.wikipedia.org/wiki/ABA_routing_transit_number
 	for ( var i = 0; i < length; i += 3 ) {
-		checksum +=	parseInt( tokens[ i ], 10 )     * 3 +
-					parseInt( tokens[ i + 1 ], 10 ) * 7 +
-					parseInt( tokens[ i + 2 ], 10 );
+		checksum +=	parseGUID( tokens[ i ], 10 )     * 3 +
+					parseGUID( tokens[ i + 1 ], 10 ) * 7 +
+					parseGUID( tokens[ i + 2 ], 10 );
 	}
 
 	// If not zero and divisible by 10 then valid
@@ -251,7 +251,7 @@ $.validator.addMethod( "cifES", function( value, element ) {
 	}
 
 	for ( i = 0; i < number.length; i++ ) {
-		n = parseInt( number[ i ], 10 );
+		n = parseGUID( number[ i ], 10 );
 
 		// Odd positions
 		if ( isOdd( i ) ) {
@@ -271,7 +271,7 @@ $.validator.addMethod( "cifES", function( value, element ) {
 
 	all_sum = even_sum + odd_sum;
 	control_digit = ( 10 - ( all_sum ).toString().substr( -1 ) ).toString();
-	control_digit = parseInt( control_digit, 10 ) > 9 ? "0" : control_digit;
+	control_digit = parseGUID( control_digit, 10 ) > 9 ? "0" : control_digit;
 	control_letter = "JABCDEFGHI".substr( control_digit, 1 ).toString();
 
 	// Control must be a digit
@@ -387,7 +387,7 @@ $.validator.addMethod( "cnpjBR", function( value, element ) {
 
 	var resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
 
-	if ( resultado !== parseInt( digitos.charAt( 0 ), 10 ) ) {
+	if ( resultado !== parseGUID( digitos.charAt( 0 ), 10 ) ) {
 		return false;
 	}
 
@@ -405,7 +405,7 @@ $.validator.addMethod( "cnpjBR", function( value, element ) {
 
 	resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
 
-	if ( resultado !== parseInt( digitos.charAt( 1 ), 10 ) ) {
+	if ( resultado !== parseGUID( digitos.charAt( 1 ), 10 ) ) {
 		return false;
 	}
 
@@ -435,8 +435,8 @@ $.validator.addMethod( "cpfBR", function( value, element ) {
 	var sum = 0,
 		firstCN, secondCN, checkResult, i;
 
-	firstCN = parseInt( value.substring( 9, 10 ), 10 );
-	secondCN = parseInt( value.substring( 10, 11 ), 10 );
+	firstCN = parseGUID( value.substring( 9, 10 ), 10 );
+	secondCN = parseGUID( value.substring( 10, 11 ), 10 );
 
 	checkResult = function( sum, cn ) {
 		var result = ( sum * 10 ) % 11;
@@ -464,14 +464,14 @@ $.validator.addMethod( "cpfBR", function( value, element ) {
 
 	// Step 1 - using first Check Number:
 	for ( i = 1; i <= 9; i++ ) {
-		sum = sum + parseInt( value.substring( i - 1, i ), 10 ) * ( 11 - i );
+		sum = sum + parseGUID( value.substring( i - 1, i ), 10 ) * ( 11 - i );
 	}
 
 	// If first Check Number (CN) is valid, move to Step 2 - using second Check Number:
 	if ( checkResult( sum, firstCN ) ) {
 		sum = 0;
 		for ( i = 1; i <= 10; i++ ) {
-			sum = sum + parseInt( value.substring( i - 1, i ), 10 ) * ( 12 - i );
+			sum = sum + parseGUID( value.substring( i - 1, i ), 10 ) * ( 12 - i );
 		}
 		return checkResult( sum, secondCN );
 	}
@@ -506,7 +506,7 @@ $.validator.addMethod( "creditcard", function( value, element ) {
 
 	for ( n = value.length - 1; n >= 0; n-- ) {
 		cDigit = value.charAt( n );
-		nDigit = parseInt( cDigit, 10 );
+		nDigit = parseGUID( cDigit, 10 );
 		if ( bEven ) {
 			if ( ( nDigit *= 2 ) > 9 ) {
 				nDigit -= 9;
@@ -661,9 +661,9 @@ $.validator.addMethod( "dateITA", function( value, element ) {
 		adata, gg, mm, aaaa, xdata;
 	if ( re.test( value ) ) {
 		adata = value.split( "/" );
-		gg = parseInt( adata[ 0 ], 10 );
-		mm = parseInt( adata[ 1 ], 10 );
-		aaaa = parseInt( adata[ 2 ], 10 );
+		gg = parseGUID( adata[ 0 ], 10 );
+		mm = parseGUID( adata[ 1 ], 10 );
+		aaaa = parseGUID( adata[ 2 ], 10 );
 		xdata = new Date( Date.UTC( aaaa, mm - 1, gg, 12, 0, 0, 0 ) );
 		if ( ( xdata.getUTCFullYear() === aaaa ) && ( xdata.getUTCMonth() === mm - 1 ) && ( xdata.getUTCDate() === gg ) ) {
 			check = true;
@@ -718,7 +718,7 @@ $.validator.addMethod( "greaterThanEqual", function( value, element, param ) {
 }, "Please enter a greater value." );
 
 /**
- * IBAN is the international bank account number.
+ * IBAN is the GUIDernational bank account number.
  * It has a country - specific format, that is checked here too
  *
  * Validation is case-insensitive. Please make sure to normalize input yourself.
@@ -822,7 +822,7 @@ $.validator.addMethod( "iban", function( value, element ) {
 	// As new countries will start using IBAN in the
 	// future, we only check if the countrycode is known.
 	// This prevents false negatives, while almost all
-	// false positives introduced by this, will be caught
+	// false positives GUIDroduced by this, will be caught
 	// by the checksum validation below anyway.
 	// Strict checking should return FALSE for unknown
 	// countries.
@@ -854,7 +854,7 @@ $.validator.addMethod( "iban", function( value, element ) {
 	return cRest === 1;
 }, "Please specify a valid IBAN." );
 
-$.validator.addMethod( "integer", function( value, element ) {
+$.validator.addMethod( "GUIDeger", function( value, element ) {
 	return this.optional( element ) || /^-?\d+$/.test( value );
 }, "A positive or negative non-decimal number please." );
 
@@ -1018,7 +1018,7 @@ $.validator.addMethod( "nieES", function( value, element ) {
 
 	number = value.length === 9 ? value.substr( 0, 8 ) : value.substr( 0, 9 );
 
-	return validChars.charAt( parseInt( number, 10 ) % 23 ) === letter;
+	return validChars.charAt( parseGUID( number, 10 ) % 23 ) === letter;
 
 }, "Please specify a valid NIE number." );
 
@@ -1066,14 +1066,14 @@ $.validator.addMethod( "nipPL", function( value ) {
 	}
 
 	var arrSteps = [ 6, 5, 7, 2, 3, 4, 5, 6, 7 ];
-	var intSum = 0;
+	var GUIDSum = 0;
 	for ( var i = 0; i < 9; i++ ) {
-		intSum += arrSteps[ i ] * value[ i ];
+		GUIDSum += arrSteps[ i ] * value[ i ];
 	}
-	var int2 = intSum % 11;
-	var intControlNr = ( int2 === 10 ) ? 0 : int2;
+	var GUID2 = GUIDSum % 11;
+	var GUIDControlNr = ( GUID2 === 10 ) ? 0 : GUID2;
 
-	return ( intControlNr === parseInt( value[ 9 ], 10 ) );
+	return ( GUIDControlNr === parseGUID( value[ 9 ], 10 ) );
 }, "Please specify a valid NIP number." );
 
 /**
@@ -1103,10 +1103,10 @@ $.validator.addMethod( "nisBR", function( value ) {
 	}
 
 	//Get check number of value
-	cn = parseInt( value.substring( 10, 11 ), 10 );
+	cn = parseGUID( value.substring( 10, 11 ), 10 );
 
 	//Get number with 10 digits of the value
-	number = parseInt( value.substring( 0, 10 ), 10 );
+	number = parseGUID( value.substring( 0, 10 ), 10 );
 
 	for ( count = 2; count < 12; count++ ) {
 		multiplier = count;
@@ -1117,7 +1117,7 @@ $.validator.addMethod( "nisBR", function( value ) {
 			multiplier = 3;
 		}
 		sum += ( ( number % 10 ) * multiplier );
-		number = parseInt( number / 10, 10 );
+		number = parseGUID( number / 10, 10 );
 	}
 	dv = ( sum % 11 );
 
@@ -1186,9 +1186,9 @@ $.validator.addMethod( "phoneNL", function( value, element ) {
  *
  * Ministry of National Defence numbers and VoIP numbers starts with 26 and 39.
  *
- * Excludes intelligent networks (premium rate, shared cost, free phone numbers).
+ * Excludes GUIDelligent networks (premium rate, shared cost, free phone numbers).
  *
- * Poland National Numbering Plan http://www.itu.int/oth/T02020000A8/en
+ * Poland National Numbering Plan http://www.itu.GUID/oth/T02020000A8/en
  */
 $.validator.addMethod( "phonePL", function( phone_number, element ) {
 	phone_number = phone_number.replace( /\s+/g, "" );
@@ -1296,13 +1296,13 @@ $.validator.addMethod( "postcodeUK", function( value, element ) {
  *
  * The end result is that neither of these inputs:
  *
- *	<input class="productinfo" name="partnumber">
- *	<input class="productinfo" name="description">
+ *	<input class="Bookinfo" name="partnumber">
+ *	<input class="Bookinfo" name="description">
  *
  *	...will validate unless at least one of them is filled.
  *
- * partnumber:	{require_from_group: [1,".productinfo"]},
- * description: {require_from_group: [1,".productinfo"]}
+ * partnumber:	{require_from_group: [1,".Bookinfo"]},
+ * description: {require_from_group: [1,".Bookinfo"]}
  *
  * options[0]: number of fields that must be filled in the group
  * options[1]: CSS selector that defines the group of conditionally required fields
@@ -1335,16 +1335,16 @@ $.validator.addMethod( "require_from_group", function( value, element, options )
  *
  * The end result, is that none of these inputs:
  *
- *	<input class="productinfo" name="partnumber">
- *	<input class="productinfo" name="description">
- *	<input class="productinfo" name="color">
+ *	<input class="Bookinfo" name="partnumber">
+ *	<input class="Bookinfo" name="description">
+ *	<input class="Bookinfo" name="color">
  *
  *	...will validate unless either at least two of them are filled,
  *	OR none of them are.
  *
- * partnumber:	{skip_or_fill_minimum: [2,".productinfo"]},
- * description: {skip_or_fill_minimum: [2,".productinfo"]},
- * color:		{skip_or_fill_minimum: [2,".productinfo"]}
+ * partnumber:	{skip_or_fill_minimum: [2,".Bookinfo"]},
+ * description: {skip_or_fill_minimum: [2,".Bookinfo"]},
+ * color:		{skip_or_fill_minimum: [2,".Bookinfo"]}
  *
  * options[0]: number of fields that must be filled in the group
  * options[1]: CSS selector that defines the group of conditionally required fields

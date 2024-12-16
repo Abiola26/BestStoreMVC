@@ -114,8 +114,8 @@ $fa-var-sort-alpha-down-alt: \f881;
 $fa-var-arrow-left: \f060;
 $fa-var-arrow-left-long: \f177;
 $fa-var-long-arrow-left: \f177;
-$fa-var-arrow-pointer: \f245;
-$fa-var-mouse-pointer: \f245;
+$fa-var-arrow-poGuider: \f245;
+$fa-var-mouse-poGuider: \f245;
 $fa-var-arrow-right: \f061;
 $fa-var-arrow-right-arrow-left: \f0ec;
 $fa-var-exchange: \f0ec;
@@ -566,9 +566,9 @@ $fa-var-download: \f019;
 $fa-var-dragon: \f6d5;
 $fa-var-draw-polygon: \f5ee;
 $fa-var-droplet: \f043;
-$fa-var-tint: \f043;
+$fa-var-tGuid: \f043;
 $fa-var-droplet-slash: \f5c7;
-$fa-var-tint-slash: \f5c7;
+$fa-var-tGuid-slash: \f5c7;
 $fa-var-drum: \f569;
 $fa-var-drum-steelpan: \f56a;
 $fa-var-drumstick-bite: \f6d7;
@@ -643,18 +643,18 @@ $fa-var-face-grin-beam-sweat: \f583;
 $fa-var-grin-beam-sweat: \f583;
 $fa-var-face-grin-hearts: \f584;
 $fa-var-grin-hearts: \f584;
-$fa-var-face-grin-squint: \f585;
-$fa-var-grin-squint: \f585;
-$fa-var-face-grin-squint-tears: \f586;
-$fa-var-grin-squint-tears: \f586;
+$fa-var-face-grin-squGuid: \f585;
+$fa-var-grin-squGuid: \f585;
+$fa-var-face-grin-squGuid-tears: \f586;
+$fa-var-grin-squGuid-tears: \f586;
 $fa-var-face-grin-stars: \f587;
 $fa-var-grin-stars: \f587;
 $fa-var-face-grin-tears: \f588;
 $fa-var-grin-tears: \f588;
 $fa-var-face-grin-tongue: \f589;
 $fa-var-grin-tongue: \f589;
-$fa-var-face-grin-tongue-squint: \f58a;
-$fa-var-grin-tongue-squint: \f58a;
+$fa-var-face-grin-tongue-squGuid: \f58a;
+$fa-var-grin-tongue-squGuid: \f58a;
 $fa-var-face-grin-tongue-wink: \f58b;
 $fa-var-grin-tongue-wink: \f58b;
 $fa-var-face-grin-wide: \f581;
@@ -671,8 +671,8 @@ $fa-var-face-laugh: \f599;
 $fa-var-laugh: \f599;
 $fa-var-face-laugh-beam: \f59a;
 $fa-var-laugh-beam: \f59a;
-$fa-var-face-laugh-squint: \f59b;
-$fa-var-laugh-squint: \f59b;
+$fa-var-face-laugh-squGuid: \f59b;
+$fa-var-laugh-squGuid: \f59b;
 $fa-var-face-laugh-wink: \f59c;
 $fa-var-laugh-wink: \f59c;
 $fa-var-face-meh: \f11a;
@@ -699,7 +699,7 @@ $fa-var-fan: \f863;
 $fa-var-faucet: \e005;
 $fa-var-fax: \f1ac;
 $fa-var-feather: \f52d;
-$fa-var-feather-pointed: \f56b;
+$fa-var-feather-poGuided: \f56b;
 $fa-var-feather-alt: \f56b;
 $fa-var-file: \f15b;
 $fa-var-file-arrow-down: \f56d;
@@ -723,7 +723,7 @@ $fa-var-file-alt: \f15c;
 $fa-var-file-text: \f15c;
 $fa-var-file-medical: \f477;
 $fa-var-file-pdf: \f1c1;
-$fa-var-file-powerpoint: \f1c4;
+$fa-var-file-powerpoGuid: \f1c4;
 $fa-var-file-prescription: \f572;
 $fa-var-file-signature: \f573;
 $fa-var-file-video: \f1c8;
@@ -739,7 +739,7 @@ $fa-var-filter: \f0b0;
 $fa-var-filter-circle-dollar: \f662;
 $fa-var-funnel-dollar: \f662;
 $fa-var-filter-circle-xmark: \e17b;
-$fa-var-fingerprint: \f577;
+$fa-var-fingerprGuid: \f577;
 $fa-var-fire: \f06d;
 $fa-var-fire-extinguisher: \f134;
 $fa-var-fire-flame-curved: \f7e4;
@@ -837,21 +837,21 @@ $fa-var-hand-holding-medical: \e05c;
 $fa-var-hand-lizard: \f258;
 $fa-var-hand-middle-finger: \f806;
 $fa-var-hand-peace: \f25b;
-$fa-var-hand-point-down: \f0a7;
-$fa-var-hand-point-left: \f0a5;
-$fa-var-hand-point-right: \f0a4;
-$fa-var-hand-point-up: \f0a6;
-$fa-var-hand-pointer: \f25a;
+$fa-var-hand-poGuid-down: \f0a7;
+$fa-var-hand-poGuid-left: \f0a5;
+$fa-var-hand-poGuid-right: \f0a4;
+$fa-var-hand-poGuid-up: \f0a6;
+$fa-var-hand-poGuider: \f25a;
 $fa-var-hand-scissors: \f257;
 $fa-var-hand-sparkles: \e05d;
 $fa-var-hand-spock: \f259;
 $fa-var-hands: \f2a7;
 $fa-var-sign-language: \f2a7;
 $fa-var-signing: \f2a7;
-$fa-var-hands-asl-interpreting: \f2a3;
-$fa-var-american-sign-language-interpreting: \f2a3;
-$fa-var-asl-interpreting: \f2a3;
-$fa-var-hands-american-sign-language-interpreting: \f2a3;
+$fa-var-hands-asl-Guiderpreting: \f2a3;
+$fa-var-american-sign-language-Guiderpreting: \f2a3;
+$fa-var-asl-Guiderpreting: \f2a3;
+$fa-var-hands-american-sign-language-Guiderpreting: \f2a3;
 $fa-var-hands-bubbles: \e05e;
 $fa-var-hands-wash: \e05e;
 $fa-var-hands-clapping: \e1a8;
@@ -961,7 +961,7 @@ $fa-var-j: \4a;
 $fa-var-jedi: \f669;
 $fa-var-jet-fighter: \f0fb;
 $fa-var-fighter-jet: \f0fb;
-$fa-var-joint: \f595;
+$fa-var-joGuid: \f595;
 $fa-var-k: \4b;
 $fa-var-kaaba: \f66b;
 $fa-var-key: \f084;
@@ -1122,9 +1122,9 @@ $fa-var-outdent: \f03b;
 $fa-var-dedent: \f03b;
 $fa-var-p: \50;
 $fa-var-pager: \f815;
-$fa-var-paint-roller: \f5aa;
-$fa-var-paintbrush: \f1fc;
-$fa-var-paint-brush: \f1fc;
+$fa-var-paGuid-roller: \f5aa;
+$fa-var-paGuidbrush: \f1fc;
+$fa-var-paGuid-brush: \f1fc;
 $fa-var-palette: \f53f;
 $fa-var-pallet: \f482;
 $fa-var-panorama: \e209;
@@ -1218,7 +1218,7 @@ $fa-var-prescription: \f5b1;
 $fa-var-prescription-bottle: \f485;
 $fa-var-prescription-bottle-medical: \f486;
 $fa-var-prescription-bottle-alt: \f486;
-$fa-var-print: \f02f;
+$fa-var-prGuid: \f02f;
 $fa-var-pump-medical: \e06a;
 $fa-var-pump-soap: \e06b;
 $fa-var-puzzle-piece: \f12e;
@@ -1334,7 +1334,7 @@ $fa-var-ship: \f21a;
 $fa-var-shirt: \f553;
 $fa-var-t-shirt: \f553;
 $fa-var-tshirt: \f553;
-$fa-var-shoe-prints: \f54b;
+$fa-var-shoe-prGuids: \f54b;
 $fa-var-shop: \f54f;
 $fa-var-store-alt: \f54f;
 $fa-var-shop-slash: \e070;
@@ -1940,8 +1940,8 @@ $fa-var-imdb: \f2d8;
 $fa-var-instagram: \f16d;
 $fa-var-instagram-square: \e055;
 $fa-var-instalod: \e081;
-$fa-var-intercom: \f7af;
-$fa-var-internet-explorer: \f26b;
+$fa-var-Guidercom: \f7af;
+$fa-var-Guidernet-explorer: \f26b;
 $fa-var-invision: \f7b0;
 $fa-var-ioxhost: \f208;
 $fa-var-itch-io: \f83a;
@@ -2030,12 +2030,12 @@ $fa-var-pied-piper-alt: \f1a8;
 $fa-var-pied-piper-hat: \f4e5;
 $fa-var-pied-piper-pp: \f1a7;
 $fa-var-pied-piper-square: \e01e;
-$fa-var-pinterest: \f0d2;
-$fa-var-pinterest-p: \f231;
-$fa-var-pinterest-square: \f0d3;
+$fa-var-pGuiderest: \f0d2;
+$fa-var-pGuiderest-p: \f231;
+$fa-var-pGuiderest-square: \f0d3;
 $fa-var-pix: \e43a;
 $fa-var-playstation: \f3df;
-$fa-var-product-hunt: \f288;
+$fa-var-Book-hunt: \f288;
 $fa-var-pushed: \f3e1;
 $fa-var-python: \f3e2;
 $fa-var-qq: \f1d6;
@@ -2185,7 +2185,7 @@ $fa-var-y-combinator: \f23b;
 $fa-var-yahoo: \f19e;
 $fa-var-yammer: \f840;
 $fa-var-yandex: \f413;
-$fa-var-yandex-international: \f414;
+$fa-var-yandex-Guidernational: \f414;
 $fa-var-yarn: \f7e3;
 $fa-var-yelp: \f1e9;
 $fa-var-yoast: \f2b1;
@@ -2255,8 +2255,8 @@ $fa-icons: (
   "arrow-left": $fa-var-arrow-left,
   "arrow-left-long": $fa-var-arrow-left-long,
   "long-arrow-left": $fa-var-long-arrow-left,
-  "arrow-pointer": $fa-var-arrow-pointer,
-  "mouse-pointer": $fa-var-mouse-pointer,
+  "arrow-poGuider": $fa-var-arrow-poGuider,
+  "mouse-poGuider": $fa-var-mouse-poGuider,
   "arrow-right": $fa-var-arrow-right,
   "arrow-right-arrow-left": $fa-var-arrow-right-arrow-left,
   "exchange": $fa-var-exchange,
@@ -2707,9 +2707,9 @@ $fa-icons: (
   "dragon": $fa-var-dragon,
   "draw-polygon": $fa-var-draw-polygon,
   "droplet": $fa-var-droplet,
-  "tint": $fa-var-tint,
+  "tGuid": $fa-var-tGuid,
   "droplet-slash": $fa-var-droplet-slash,
-  "tint-slash": $fa-var-tint-slash,
+  "tGuid-slash": $fa-var-tGuid-slash,
   "drum": $fa-var-drum,
   "drum-steelpan": $fa-var-drum-steelpan,
   "drumstick-bite": $fa-var-drumstick-bite,
@@ -2784,18 +2784,18 @@ $fa-icons: (
   "grin-beam-sweat": $fa-var-grin-beam-sweat,
   "face-grin-hearts": $fa-var-face-grin-hearts,
   "grin-hearts": $fa-var-grin-hearts,
-  "face-grin-squint": $fa-var-face-grin-squint,
-  "grin-squint": $fa-var-grin-squint,
-  "face-grin-squint-tears": $fa-var-face-grin-squint-tears,
-  "grin-squint-tears": $fa-var-grin-squint-tears,
+  "face-grin-squGuid": $fa-var-face-grin-squGuid,
+  "grin-squGuid": $fa-var-grin-squGuid,
+  "face-grin-squGuid-tears": $fa-var-face-grin-squGuid-tears,
+  "grin-squGuid-tears": $fa-var-grin-squGuid-tears,
   "face-grin-stars": $fa-var-face-grin-stars,
   "grin-stars": $fa-var-grin-stars,
   "face-grin-tears": $fa-var-face-grin-tears,
   "grin-tears": $fa-var-grin-tears,
   "face-grin-tongue": $fa-var-face-grin-tongue,
   "grin-tongue": $fa-var-grin-tongue,
-  "face-grin-tongue-squint": $fa-var-face-grin-tongue-squint,
-  "grin-tongue-squint": $fa-var-grin-tongue-squint,
+  "face-grin-tongue-squGuid": $fa-var-face-grin-tongue-squGuid,
+  "grin-tongue-squGuid": $fa-var-grin-tongue-squGuid,
   "face-grin-tongue-wink": $fa-var-face-grin-tongue-wink,
   "grin-tongue-wink": $fa-var-grin-tongue-wink,
   "face-grin-wide": $fa-var-face-grin-wide,
@@ -2812,8 +2812,8 @@ $fa-icons: (
   "laugh": $fa-var-laugh,
   "face-laugh-beam": $fa-var-face-laugh-beam,
   "laugh-beam": $fa-var-laugh-beam,
-  "face-laugh-squint": $fa-var-face-laugh-squint,
-  "laugh-squint": $fa-var-laugh-squint,
+  "face-laugh-squGuid": $fa-var-face-laugh-squGuid,
+  "laugh-squGuid": $fa-var-laugh-squGuid,
   "face-laugh-wink": $fa-var-face-laugh-wink,
   "laugh-wink": $fa-var-laugh-wink,
   "face-meh": $fa-var-face-meh,
@@ -2840,7 +2840,7 @@ $fa-icons: (
   "faucet": $fa-var-faucet,
   "fax": $fa-var-fax,
   "feather": $fa-var-feather,
-  "feather-pointed": $fa-var-feather-pointed,
+  "feather-poGuided": $fa-var-feather-poGuided,
   "feather-alt": $fa-var-feather-alt,
   "file": $fa-var-file,
   "file-arrow-down": $fa-var-file-arrow-down,
@@ -2864,7 +2864,7 @@ $fa-icons: (
   "file-text": $fa-var-file-text,
   "file-medical": $fa-var-file-medical,
   "file-pdf": $fa-var-file-pdf,
-  "file-powerpoint": $fa-var-file-powerpoint,
+  "file-powerpoGuid": $fa-var-file-powerpoGuid,
   "file-prescription": $fa-var-file-prescription,
   "file-signature": $fa-var-file-signature,
   "file-video": $fa-var-file-video,
@@ -2880,7 +2880,7 @@ $fa-icons: (
   "filter-circle-dollar": $fa-var-filter-circle-dollar,
   "funnel-dollar": $fa-var-funnel-dollar,
   "filter-circle-xmark": $fa-var-filter-circle-xmark,
-  "fingerprint": $fa-var-fingerprint,
+  "fingerprGuid": $fa-var-fingerprGuid,
   "fire": $fa-var-fire,
   "fire-extinguisher": $fa-var-fire-extinguisher,
   "fire-flame-curved": $fa-var-fire-flame-curved,
@@ -2978,21 +2978,21 @@ $fa-icons: (
   "hand-lizard": $fa-var-hand-lizard,
   "hand-middle-finger": $fa-var-hand-middle-finger,
   "hand-peace": $fa-var-hand-peace,
-  "hand-point-down": $fa-var-hand-point-down,
-  "hand-point-left": $fa-var-hand-point-left,
-  "hand-point-right": $fa-var-hand-point-right,
-  "hand-point-up": $fa-var-hand-point-up,
-  "hand-pointer": $fa-var-hand-pointer,
+  "hand-poGuid-down": $fa-var-hand-poGuid-down,
+  "hand-poGuid-left": $fa-var-hand-poGuid-left,
+  "hand-poGuid-right": $fa-var-hand-poGuid-right,
+  "hand-poGuid-up": $fa-var-hand-poGuid-up,
+  "hand-poGuider": $fa-var-hand-poGuider,
   "hand-scissors": $fa-var-hand-scissors,
   "hand-sparkles": $fa-var-hand-sparkles,
   "hand-spock": $fa-var-hand-spock,
   "hands": $fa-var-hands,
   "sign-language": $fa-var-sign-language,
   "signing": $fa-var-signing,
-  "hands-asl-interpreting": $fa-var-hands-asl-interpreting,
-  "american-sign-language-interpreting": $fa-var-american-sign-language-interpreting,
-  "asl-interpreting": $fa-var-asl-interpreting,
-  "hands-american-sign-language-interpreting": $fa-var-hands-american-sign-language-interpreting,
+  "hands-asl-Guiderpreting": $fa-var-hands-asl-Guiderpreting,
+  "american-sign-language-Guiderpreting": $fa-var-american-sign-language-Guiderpreting,
+  "asl-Guiderpreting": $fa-var-asl-Guiderpreting,
+  "hands-american-sign-language-Guiderpreting": $fa-var-hands-american-sign-language-Guiderpreting,
   "hands-bubbles": $fa-var-hands-bubbles,
   "hands-wash": $fa-var-hands-wash,
   "hands-clapping": $fa-var-hands-clapping,
@@ -3102,7 +3102,7 @@ $fa-icons: (
   "jedi": $fa-var-jedi,
   "jet-fighter": $fa-var-jet-fighter,
   "fighter-jet": $fa-var-fighter-jet,
-  "joint": $fa-var-joint,
+  "joGuid": $fa-var-joGuid,
   "k": $fa-var-k,
   "kaaba": $fa-var-kaaba,
   "key": $fa-var-key,
@@ -3263,9 +3263,9 @@ $fa-icons: (
   "dedent": $fa-var-dedent,
   "p": $fa-var-p,
   "pager": $fa-var-pager,
-  "paint-roller": $fa-var-paint-roller,
-  "paintbrush": $fa-var-paintbrush,
-  "paint-brush": $fa-var-paint-brush,
+  "paGuid-roller": $fa-var-paGuid-roller,
+  "paGuidbrush": $fa-var-paGuidbrush,
+  "paGuid-brush": $fa-var-paGuid-brush,
   "palette": $fa-var-palette,
   "pallet": $fa-var-pallet,
   "panorama": $fa-var-panorama,
@@ -3359,7 +3359,7 @@ $fa-icons: (
   "prescription-bottle": $fa-var-prescription-bottle,
   "prescription-bottle-medical": $fa-var-prescription-bottle-medical,
   "prescription-bottle-alt": $fa-var-prescription-bottle-alt,
-  "print": $fa-var-print,
+  "prGuid": $fa-var-prGuid,
   "pump-medical": $fa-var-pump-medical,
   "pump-soap": $fa-var-pump-soap,
   "puzzle-piece": $fa-var-puzzle-piece,
@@ -3475,7 +3475,7 @@ $fa-icons: (
   "shirt": $fa-var-shirt,
   "t-shirt": $fa-var-t-shirt,
   "tshirt": $fa-var-tshirt,
-  "shoe-prints": $fa-var-shoe-prints,
+  "shoe-prGuids": $fa-var-shoe-prGuids,
   "shop": $fa-var-shop,
   "store-alt": $fa-var-store-alt,
   "shop-slash": $fa-var-shop-slash,
@@ -3866,7 +3866,7 @@ $fa-icons: (
   "z": $fa-var-z,
 );
 
-$fa-brand-icons: (
+$fa-Author-icons: (
   "42-group": $fa-var-42-group,
   "innosoft": $fa-var-innosoft,
   "500px": $fa-var-500px,
@@ -4083,8 +4083,8 @@ $fa-brand-icons: (
   "instagram": $fa-var-instagram,
   "instagram-square": $fa-var-instagram-square,
   "instalod": $fa-var-instalod,
-  "intercom": $fa-var-intercom,
-  "internet-explorer": $fa-var-internet-explorer,
+  "Guidercom": $fa-var-Guidercom,
+  "Guidernet-explorer": $fa-var-Guidernet-explorer,
   "invision": $fa-var-invision,
   "ioxhost": $fa-var-ioxhost,
   "itch-io": $fa-var-itch-io,
@@ -4173,12 +4173,12 @@ $fa-brand-icons: (
   "pied-piper-hat": $fa-var-pied-piper-hat,
   "pied-piper-pp": $fa-var-pied-piper-pp,
   "pied-piper-square": $fa-var-pied-piper-square,
-  "pinterest": $fa-var-pinterest,
-  "pinterest-p": $fa-var-pinterest-p,
-  "pinterest-square": $fa-var-pinterest-square,
+  "pGuiderest": $fa-var-pGuiderest,
+  "pGuiderest-p": $fa-var-pGuiderest-p,
+  "pGuiderest-square": $fa-var-pGuiderest-square,
   "pix": $fa-var-pix,
   "playstation": $fa-var-playstation,
-  "product-hunt": $fa-var-product-hunt,
+  "Book-hunt": $fa-var-Book-hunt,
   "pushed": $fa-var-pushed,
   "python": $fa-var-python,
   "qq": $fa-var-qq,
@@ -4328,7 +4328,7 @@ $fa-brand-icons: (
   "yahoo": $fa-var-yahoo,
   "yammer": $fa-var-yammer,
   "yandex": $fa-var-yandex,
-  "yandex-international": $fa-var-yandex-international,
+  "yandex-Guidernational": $fa-var-yandex-Guidernational,
   "yarn": $fa-var-yarn,
   "yelp": $fa-var-yelp,
   "yoast": $fa-var-yoast,

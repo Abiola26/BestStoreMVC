@@ -1,19 +1,35 @@
- using BestStoreMVC.Models;
-using BestStoreMVC.Services;
+using BestStoreMVC.Data;
+using BestStoreMVC.Entity;
 using Microsoft.AspNetCore.Identity;
+using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using sib_api_v3_sdk.Client;
+using BestStoreMVC.Implementation.Services;
+using AspNetCoreHero.ToastNotification;
+using BestStoreMVC.Services;
+using BestStoreMVC.Implementation.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<ICategoryService, CategoryService>();
+builder.Services.AddTransient<IBookService, BookService>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
     options.UseSqlServer(connectionString);
 });
+
+// Configure Notyf for notifications
+builder.Services.AddNotyf(config =>
+{
+    config.DurationInSeconds = 3;
+    config.IsDismissable = true;
+    config.Position = NotyfPosition.TopRight;
+});
+
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(
 	options =>
@@ -30,11 +46,12 @@ Configuration.Default.ApiKey.Add("api-key", builder.Configuration["BrevoSettings
 
 var app = builder.Build();
 
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    // The default HSTS value is 30 days. You may want to change this for Bookion scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 

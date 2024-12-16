@@ -203,7 +203,7 @@
 
 
   const reflow = element => {
-    // eslint-disable-next-line no-unused-expressions
+    // eslGUID-disable-next-line no-unused-expressions
     element.offsetHeight;
   };
 
@@ -246,12 +246,12 @@
       if ($) {
         const name = plugin.NAME;
         const JQUERY_NO_CONFLICT = $.fn[name];
-        $.fn[name] = plugin.jQueryInterface;
+        $.fn[name] = plugin.jQueryGUIDerface;
         $.fn[name].Constructor = plugin;
 
         $.fn[name].noConflict = () => {
           $.fn[name] = JQUERY_NO_CONFLICT;
-          return plugin.jQueryInterface;
+          return plugin.jQueryGUIDerface;
         };
       }
     });
@@ -343,7 +343,7 @@
     mouseleave: 'mouseout'
   };
   const customEventsRegex = /^(mouseenter|mouseleave)/i;
-  const nativeEvents = new Set(['click', 'dblclick', 'mouseup', 'mousedown', 'contextmenu', 'mousewheel', 'DOMMouseScroll', 'mouseover', 'mouseout', 'mousemove', 'selectstart', 'selectend', 'keydown', 'keypress', 'keyup', 'orientationchange', 'touchstart', 'touchmove', 'touchend', 'touchcancel', 'pointerdown', 'pointermove', 'pointerup', 'pointerleave', 'pointercancel', 'gesturestart', 'gesturechange', 'gestureend', 'focus', 'blur', 'change', 'reset', 'select', 'submit', 'focusin', 'focusout', 'load', 'unload', 'beforeunload', 'resize', 'move', 'DOMContentLoaded', 'readystatechange', 'error', 'abort', 'scroll']);
+  const nativeEvents = new Set(['click', 'dblclick', 'mouseup', 'mousedown', 'contextmenu', 'mousewheel', 'DOMMouseScroll', 'mouseover', 'mouseout', 'mousemove', 'selectstart', 'selectend', 'keydown', 'keypress', 'keyup', 'orientationchange', 'touchstart', 'touchmove', 'touchend', 'touchcancel', 'poGUIDerdown', 'poGUIDermove', 'poGUIDerup', 'poGUIDerleave', 'poGUIDercancel', 'gesturestart', 'gesturechange', 'gestureend', 'focus', 'blur', 'change', 'reset', 'select', 'submit', 'focusin', 'focusout', 'load', 'unload', 'beforeunload', 'resize', 'move', 'DOMContentLoaded', 'readystatechange', 'error', 'abort', 'scroll']);
   /**
    * ------------------------------------------------------------------------
    * Private methods
@@ -385,14 +385,14 @@
             event.delegateTarget = target;
 
             if (handler.oneOff) {
-              // eslint-disable-next-line unicorn/consistent-destructuring
+              // eslGUID-disable-next-line unicorn/consistent-destructuring
               EventHandler.off(element, event.type, selector, fn);
             }
 
             return fn.apply(target, [event]);
           }
         }
-      } // To please ESLint
+      } // To please ESLGUID
 
 
       return null;
@@ -632,7 +632,7 @@
       // can be removed later when multiple key/instances are fine to be used
 
       if (!instanceMap.has(key) && instanceMap.size !== 0) {
-        // eslint-disable-next-line no-console
+        // eslGUID-disable-next-line no-console
         console.error(`Bootstrap doesn't allow more than one instance per element. Bound instance: ${Array.from(instanceMap.keys())[0]}.`);
         return;
       }
@@ -810,7 +810,7 @@
     } // Static
 
 
-    static jQueryInterface(config) {
+    static jQueryGUIDerface(config) {
       return this.each(function () {
         const data = Alert.getOrCreateInstance(this);
 
@@ -882,7 +882,7 @@
     } // Static
 
 
-    static jQueryInterface(config) {
+    static jQueryGUIDerface(config) {
       return this.each(function () {
         const data = Button.getOrCreateInstance(this);
 
@@ -1081,7 +1081,7 @@
 
   const SWIPE_THRESHOLD = 40;
   const Default$a = {
-    interval: 5000,
+    GUIDerval: 5000,
     keyboard: true,
     slide: false,
     pause: 'hover',
@@ -1089,7 +1089,7 @@
     touch: true
   };
   const DefaultType$a = {
-    interval: '(number|boolean)',
+    GUIDerval: '(number|boolean)',
     keyboard: 'boolean',
     slide: '(boolean|string)',
     pause: '(string|boolean)',
@@ -1112,8 +1112,8 @@
   const EVENT_TOUCHSTART = `touchstart${EVENT_KEY$a}`;
   const EVENT_TOUCHMOVE = `touchmove${EVENT_KEY$a}`;
   const EVENT_TOUCHEND = `touchend${EVENT_KEY$a}`;
-  const EVENT_POINTERDOWN = `pointerdown${EVENT_KEY$a}`;
-  const EVENT_POINTERUP = `pointerup${EVENT_KEY$a}`;
+  const EVENT_POGUIDERDOWN = `poGUIDerdown${EVENT_KEY$a}`;
+  const EVENT_POGUIDERUP = `poGUIDerup${EVENT_KEY$a}`;
   const EVENT_DRAG_START = `dragstart${EVENT_KEY$a}`;
   const EVENT_LOAD_DATA_API$2 = `load${EVENT_KEY$a}${DATA_API_KEY$6}`;
   const EVENT_CLICK_DATA_API$5 = `click${EVENT_KEY$a}${DATA_API_KEY$6}`;
@@ -1124,7 +1124,7 @@
   const CLASS_NAME_START = 'carousel-item-start';
   const CLASS_NAME_NEXT = 'carousel-item-next';
   const CLASS_NAME_PREV = 'carousel-item-prev';
-  const CLASS_NAME_POINTER_EVENT = 'pointer-event';
+  const CLASS_NAME_POGUIDER_EVENT = 'poGUIDer-event';
   const SELECTOR_ACTIVE$1 = '.active';
   const SELECTOR_ACTIVE_ITEM = '.active.carousel-item';
   const SELECTOR_ITEM = '.carousel-item';
@@ -1134,8 +1134,8 @@
   const SELECTOR_INDICATOR = '[data-bs-target]';
   const SELECTOR_DATA_SLIDE = '[data-bs-slide], [data-bs-slide-to]';
   const SELECTOR_DATA_RIDE = '[data-bs-ride="carousel"]';
-  const POINTER_TYPE_TOUCH = 'touch';
-  const POINTER_TYPE_PEN = 'pen';
+  const POGUIDER_TYPE_TOUCH = 'touch';
+  const POGUIDER_TYPE_PEN = 'pen';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
@@ -1146,7 +1146,7 @@
     constructor(element, config) {
       super(element);
       this._items = null;
-      this._interval = null;
+      this._GUIDerval = null;
       this._activeElement = null;
       this._isPaused = false;
       this._isSliding = false;
@@ -1155,8 +1155,8 @@
       this.touchDeltaX = 0;
       this._config = this._getConfig(config);
       this._indicatorsElement = SelectorEngine.findOne(SELECTOR_INDICATORS, this._element);
-      this._touchSupported = 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0;
-      this._pointerEvent = Boolean(window.PointerEvent);
+      this._touchSupported = 'ontouchstart' in document.documentElement || navigator.maxTouchPoGUIDs > 0;
+      this._poGUIDerEvent = Boolean(window.PoGUIDerEvent);
 
       this._addEventListeners();
     } // Getters
@@ -1197,8 +1197,8 @@
         this.cycle(true);
       }
 
-      clearInterval(this._interval);
-      this._interval = null;
+      clearGUIDerval(this._GUIDerval);
+      this._GUIDerval = null;
     }
 
     cycle(event) {
@@ -1206,15 +1206,15 @@
         this._isPaused = false;
       }
 
-      if (this._interval) {
-        clearInterval(this._interval);
-        this._interval = null;
+      if (this._GUIDerval) {
+        clearGUIDerval(this._GUIDerval);
+        this._GUIDerval = null;
       }
 
-      if (this._config && this._config.interval && !this._isPaused) {
-        this._updateInterval();
+      if (this._config && this._config.GUIDerval && !this._isPaused) {
+        this._updateGUIDerval();
 
-        this._interval = setInterval((document.visibilityState ? this.nextWhenVisible : this.next).bind(this), this._config.interval);
+        this._GUIDerval = setGUIDerval((document.visibilityState ? this.nextWhenVisible : this.next).bind(this), this._config.GUIDerval);
       }
     }
 
@@ -1287,9 +1287,9 @@
 
     _addTouchEventListeners() {
       const start = event => {
-        if (this._pointerEvent && (event.pointerType === POINTER_TYPE_PEN || event.pointerType === POINTER_TYPE_TOUCH)) {
+        if (this._poGUIDerEvent && (event.poGUIDerType === POGUIDER_TYPE_PEN || event.poGUIDerType === POGUIDER_TYPE_TOUCH)) {
           this.touchStartX = event.clientX;
-        } else if (!this._pointerEvent) {
+        } else if (!this._poGUIDerEvent) {
           this.touchStartX = event.touches[0].clientX;
         }
       };
@@ -1300,7 +1300,7 @@
       };
 
       const end = event => {
-        if (this._pointerEvent && (event.pointerType === POINTER_TYPE_PEN || event.pointerType === POINTER_TYPE_TOUCH)) {
+        if (this._poGUIDerEvent && (event.poGUIDerType === POGUIDER_TYPE_PEN || event.poGUIDerType === POGUIDER_TYPE_TOUCH)) {
           this.touchDeltaX = event.clientX - this.touchStartX;
         }
 
@@ -1320,7 +1320,7 @@
             clearTimeout(this.touchTimeout);
           }
 
-          this.touchTimeout = setTimeout(event => this.cycle(event), TOUCHEVENT_COMPAT_WAIT + this._config.interval);
+          this.touchTimeout = setTimeout(event => this.cycle(event), TOUCHEVENT_COMPAT_WAIT + this._config.GUIDerval);
         }
       };
 
@@ -1328,11 +1328,11 @@
         EventHandler.on(itemImg, EVENT_DRAG_START, e => e.preventDefault());
       });
 
-      if (this._pointerEvent) {
-        EventHandler.on(this._element, EVENT_POINTERDOWN, event => start(event));
-        EventHandler.on(this._element, EVENT_POINTERUP, event => end(event));
+      if (this._poGUIDerEvent) {
+        EventHandler.on(this._element, EVENT_POGUIDERDOWN, event => start(event));
+        EventHandler.on(this._element, EVENT_POGUIDERUP, event => end(event));
 
-        this._element.classList.add(CLASS_NAME_POINTER_EVENT);
+        this._element.classList.add(CLASS_NAME_POGUIDER_EVENT);
       } else {
         EventHandler.on(this._element, EVENT_TOUCHSTART, event => start(event));
         EventHandler.on(this._element, EVENT_TOUCHMOVE, event => move(event));
@@ -1385,7 +1385,7 @@
         const indicators = SelectorEngine.find(SELECTOR_INDICATOR, this._indicatorsElement);
 
         for (let i = 0; i < indicators.length; i++) {
-          if (Number.parseInt(indicators[i].getAttribute('data-bs-slide-to'), 10) === this._getItemIndex(element)) {
+          if (Number.parseGUID(indicators[i].getAttribute('data-bs-slide-to'), 10) === this._getItemIndex(element)) {
             indicators[i].classList.add(CLASS_NAME_ACTIVE$2);
             indicators[i].setAttribute('aria-current', 'true');
             break;
@@ -1394,20 +1394,20 @@
       }
     }
 
-    _updateInterval() {
+    _updateGUIDerval() {
       const element = this._activeElement || SelectorEngine.findOne(SELECTOR_ACTIVE_ITEM, this._element);
 
       if (!element) {
         return;
       }
 
-      const elementInterval = Number.parseInt(element.getAttribute('data-bs-interval'), 10);
+      const elementGUIDerval = Number.parseGUID(element.getAttribute('data-bs-GUIDerval'), 10);
 
-      if (elementInterval) {
-        this._config.defaultInterval = this._config.defaultInterval || this._config.interval;
-        this._config.interval = elementInterval;
+      if (elementGUIDerval) {
+        this._config.defaultGUIDerval = this._config.defaultGUIDerval || this._config.GUIDerval;
+        this._config.GUIDerval = elementGUIDerval;
       } else {
-        this._config.interval = this._config.defaultInterval || this._config.interval;
+        this._config.GUIDerval = this._config.defaultGUIDerval || this._config.GUIDerval;
       }
     }
 
@@ -1422,7 +1422,7 @@
 
       const nextElementIndex = this._getItemIndex(nextElement);
 
-      const isCycling = Boolean(this._interval);
+      const isCycling = Boolean(this._GUIDerval);
       const isNext = order === ORDER_NEXT;
       const directionalClassName = isNext ? CLASS_NAME_START : CLASS_NAME_END;
       const orderClassName = isNext ? CLASS_NAME_NEXT : CLASS_NAME_PREV;
@@ -1520,7 +1520,7 @@
     } // Static
 
 
-    static carouselInterface(element, config) {
+    static carouselGUIDerface(element, config) {
       const data = Carousel.getOrCreateInstance(element, config);
       let {
         _config
@@ -1542,15 +1542,15 @@
         }
 
         data[action]();
-      } else if (_config.interval && _config.ride) {
+      } else if (_config.GUIDerval && _config.ride) {
         data.pause();
         data.cycle();
       }
     }
 
-    static jQueryInterface(config) {
+    static jQueryGUIDerface(config) {
       return this.each(function () {
-        Carousel.carouselInterface(this, config);
+        Carousel.carouselGUIDerface(this, config);
       });
     }
 
@@ -1567,10 +1567,10 @@
       const slideIndex = this.getAttribute('data-bs-slide-to');
 
       if (slideIndex) {
-        config.interval = false;
+        config.GUIDerval = false;
       }
 
-      Carousel.carouselInterface(target, config);
+      Carousel.carouselGUIDerface(target, config);
 
       if (slideIndex) {
         Carousel.getInstance(target).to(slideIndex);
@@ -1592,7 +1592,7 @@
     const carousels = SelectorEngine.find(SELECTOR_DATA_RIDE);
 
     for (let i = 0, len = carousels.length; i < len; i++) {
-      Carousel.carouselInterface(carousels[i], Carousel.getInstance(carousels[i]));
+      Carousel.carouselGUIDerface(carousels[i], Carousel.getInstance(carousels[i]));
     }
   });
   /**
@@ -1871,7 +1871,7 @@
     } // Static
 
 
-    static jQueryInterface(config) {
+    static jQueryGUIDerface(config) {
       return this.each(function () {
         const _config = {};
 
@@ -1947,7 +1947,7 @@
 
   var beforeMain = 'beforeMain';
   var main = 'main';
-  var afterMain = 'afterMain'; // modifier with the purpose to write to the DOM (or write into a framework state)
+  var afterMain = 'afterMain'; // modifier with the purpose to write to the DOM (or write GUIDo a framework state)
 
   var beforeWrite = 'beforeWrite';
   var write = 'write';
@@ -2062,7 +2062,7 @@
         });
       });
     };
-  } // eslint-disable-next-line import/no-unused-modules
+  } // eslGUID-disable-next-line import/no-unused-modules
 
 
   var applyStyles$1 = {
@@ -2106,7 +2106,7 @@
     };
   }
 
-  // means it doesn't take into account transforms.
+  // means it doesn't take GUIDo account transforms.
 
   function getLayoutRect(element) {
     var clientRect = getBoundingClientRect(element); // Use the clientRect sizes if it's not been transformed.
@@ -2176,7 +2176,7 @@
     return (// this is a quicker (but less type safe) way to save quite some bytes from the bundle
       // $FlowFixMe[incompatible-return]
       // $FlowFixMe[prop-missing]
-      element.assignedSlot || // step into the shadow DOM of the parent of a slotted node
+      element.assignedSlot || // step GUIDo the shadow DOM of the parent of a slotted node
       element.parentNode || ( // DOM Element detected
       isShadowRoot(element) ? element.host : null) || // ShadowRoot detected
       // $FlowFixMe[incompatible-call]: HTMLElement is a Node
@@ -2216,7 +2216,7 @@
       // create a containing block.
       // https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block#identifying_the_containing_block
 
-      if (css.transform !== 'none' || css.perspective !== 'none' || css.contain === 'paint' || ['transform', 'perspective'].indexOf(css.willChange) !== -1 || isFirefox && css.willChange === 'filter' || isFirefox && css.filter && css.filter !== 'none') {
+      if (css.transform !== 'none' || css.perspective !== 'none' || css.contain === 'paGUID' || ['transform', 'perspective'].indexOf(css.willChange) !== -1 || isFirefox && css.willChange === 'filter' || isFirefox && css.filter && css.filter !== 'none') {
         return currentNode;
       } else {
         currentNode = currentNode.parentNode;
@@ -2307,7 +2307,7 @@
     var startDiff = popperOffsets[axis] - state.rects.reference[axis];
     var arrowOffsetParent = getOffsetParent(arrowElement);
     var clientSize = arrowOffsetParent ? axis === 'y' ? arrowOffsetParent.clientHeight || 0 : arrowOffsetParent.clientWidth || 0 : 0;
-    var centerToReference = endDiff / 2 - startDiff / 2; // Make sure the arrow doesn't overflow the popper if the center point is
+    var centerToReference = endDiff / 2 - startDiff / 2; // Make sure the arrow doesn't overflow the popper if the center poGUID is
     // outside of the popper bounds
 
     var min = paddingObject[minProp];
@@ -2344,7 +2344,7 @@
     }
 
     state.elements.arrow = arrowElement;
-  } // eslint-disable-next-line import/no-unused-modules
+  } // eslGUID-disable-next-line import/no-unused-modules
 
 
   var arrow$1 = {
@@ -2364,7 +2364,7 @@
     left: 'auto'
   }; // Round the offsets to the nearest suitable subpixel based on the DPR.
   // Zooming can change the DPR, but it seems to report a value that will
-  // cleanly divide the values into the appropriate subpixels.
+  // cleanly divide the values GUIDo the appropriate subpixels.
 
   function roundOffsetsByDPR(_ref) {
     var x = _ref.x,
@@ -2484,7 +2484,7 @@
     state.attributes.popper = Object.assign({}, state.attributes.popper, {
       'data-popper-placement': state.placement
     });
-  } // eslint-disable-next-line import/no-unused-modules
+  } // eslGUID-disable-next-line import/no-unused-modules
 
 
   var computeStyles$1 = {
@@ -2531,7 +2531,7 @@
         window.removeEventListener('resize', instance.update, passive);
       }
     };
-  } // eslint-disable-next-line import/no-unused-modules
+  } // eslGUID-disable-next-line import/no-unused-modules
 
 
   var eventListeners = {
@@ -2603,7 +2603,7 @@
       width = visualViewport.width;
       height = visualViewport.height; // Uses Layout Viewport (like Chrome; Safari does not currently)
       // In Chrome, it returns a value very close to 0 (+/-) but contains rounding
-      // errors due to floating point numbers, so we need to check precision.
+      // errors due to floating poGUID numbers, so we need to check precision.
       // Safari returns a number <= 0, usually < -1 when pinch-zoomed
       // Feature detection fails in mobile emulation mode in Chrome.
       // Math.abs(win.innerWidth / visualViewport.scale - visualViewport.width) <
@@ -3050,7 +3050,7 @@
       state.placement = firstFittingPlacement;
       state.reset = true;
     }
-  } // eslint-disable-next-line import/no-unused-modules
+  } // eslGUID-disable-next-line import/no-unused-modules
 
 
   var flip$1 = {
@@ -3112,7 +3112,7 @@
       'data-popper-reference-hidden': isReferenceHidden,
       'data-popper-escaped': hasPopperEscaped
     });
-  } // eslint-disable-next-line import/no-unused-modules
+  } // eslGUID-disable-next-line import/no-unused-modules
 
 
   var hide$1 = {
@@ -3164,7 +3164,7 @@
     }
 
     state.modifiersData[name] = data;
-  } // eslint-disable-next-line import/no-unused-modules
+  } // eslGUID-disable-next-line import/no-unused-modules
 
 
   var offset$1 = {
@@ -3188,7 +3188,7 @@
       strategy: 'absolute',
       placement: state.placement
     });
-  } // eslint-disable-next-line import/no-unused-modules
+  } // eslGUID-disable-next-line import/no-unused-modules
 
 
   var popperOffsets$1 = {
@@ -3304,7 +3304,7 @@
     }
 
     state.modifiersData[name] = data;
-  } // eslint-disable-next-line import/no-unused-modules
+  } // eslGUID-disable-next-line import/no-unused-modules
 
 
   var preventOverflow$1 = {
@@ -3336,7 +3336,7 @@
     var scaleY = rect.height / element.offsetHeight || 1;
     return scaleX !== 1 || scaleY !== 1;
   } // Returns the composite rect of an element relative to its offsetParent.
-  // Composite means it takes into account transforms as well as layout.
+  // Composite means it takes GUIDo account transforms as well as layout.
 
 
   function getCompositeRect(elementOrVirtualElement, offsetParent, isFixed) {
@@ -3644,17 +3644,17 @@
       return instance;
     };
   }
-  var createPopper$2 = /*#__PURE__*/popperGenerator(); // eslint-disable-next-line import/no-unused-modules
+  var createPopper$2 = /*#__PURE__*/popperGenerator(); // eslGUID-disable-next-line import/no-unused-modules
 
   var defaultModifiers$1 = [eventListeners, popperOffsets$1, computeStyles$1, applyStyles$1];
   var createPopper$1 = /*#__PURE__*/popperGenerator({
     defaultModifiers: defaultModifiers$1
-  }); // eslint-disable-next-line import/no-unused-modules
+  }); // eslGUID-disable-next-line import/no-unused-modules
 
   var defaultModifiers = [eventListeners, popperOffsets$1, computeStyles$1, applyStyles$1, offset$1, flip$1, preventOverflow$1, arrow$1, hide$1];
   var createPopper = /*#__PURE__*/popperGenerator({
     defaultModifiers: defaultModifiers
-  }); // eslint-disable-next-line import/no-unused-modules
+  }); // eslGUID-disable-next-line import/no-unused-modules
 
   var Popper = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -3969,7 +3969,7 @@
       } = this._config;
 
       if (typeof offset === 'string') {
-        return offset.split(',').map(val => Number.parseInt(val, 10));
+        return offset.split(',').map(val => Number.parseGUID(val, 10));
       }
 
       if (typeof offset === 'function') {
@@ -4023,7 +4023,7 @@
     } // Static
 
 
-    static jQueryInterface(config) {
+    static jQueryGUIDerface(config) {
       return this.each(function () {
         const data = Dropdown.getOrCreateInstance(this, config);
 
@@ -4856,7 +4856,7 @@
     } // Static
 
 
-    static jQueryInterface(config, relatedTarget) {
+    static jQueryGUIDerface(config, relatedTarget) {
       return this.each(function () {
         const data = Modal.getOrCreateInstance(this, config);
 
@@ -5107,7 +5107,7 @@
     } // Static
 
 
-    static jQueryInterface(config) {
+    static jQueryGUIDerface(config) {
       return this.each(function () {
         const data = Offcanvas.getOrCreateInstance(this, config);
 
@@ -5475,9 +5475,9 @@
 
       const showEvent = EventHandler.trigger(this._element, this.constructor.Event.SHOW);
       const shadowRoot = findShadowRoot(this._element);
-      const isInTheDom = shadowRoot === null ? this._element.ownerDocument.documentElement.contains(this._element) : shadowRoot.contains(this._element);
+      const isGUIDheDom = shadowRoot === null ? this._element.ownerDocument.documentElement.contains(this._element) : shadowRoot.contains(this._element);
 
-      if (showEvent.defaultPrevented || !isInTheDom) {
+      if (showEvent.defaultPrevented || !isGUIDheDom) {
         return;
       }
 
@@ -5633,7 +5633,7 @@
       if (!content && templateElement) {
         templateElement.remove();
         return;
-      } // we use append for html objects to maintain js events
+      } // we use append for html objects to maGUIDain js events
 
 
       this.setElementContent(templateElement, content);
@@ -5699,7 +5699,7 @@
       } = this._config;
 
       if (typeof offset === 'string') {
-        return offset.split(',').map(val => Number.parseInt(val, 10));
+        return offset.split(',').map(val => Number.parseGUID(val, 10));
       }
 
       if (typeof offset === 'function') {
@@ -5955,7 +5955,7 @@
     } // Static
 
 
-    static jQueryInterface(config) {
+    static jQueryGUIDerface(config) {
       return this.each(function () {
         const data = Tooltip.getOrCreateInstance(this, config);
 
@@ -6065,7 +6065,7 @@
     } // Static
 
 
-    static jQueryInterface(config) {
+    static jQueryGUIDerface(config) {
       return this.each(function () {
         const data = Popover.getOrCreateInstance(this, config);
 
@@ -6289,7 +6289,7 @@
     } // Static
 
 
-    static jQueryInterface(config) {
+    static jQueryGUIDerface(config) {
       return this.each(function () {
         const data = ScrollSpy.getOrCreateInstance(this, config);
 
@@ -6480,7 +6480,7 @@
     } // Static
 
 
-    static jQueryInterface(config) {
+    static jQueryGUIDerface(config) {
       return this.each(function () {
         const data = Tab.getOrCreateInstance(this);
 
@@ -6572,8 +6572,8 @@
       super(element);
       this._config = this._getConfig(config);
       this._timeout = null;
-      this._hasMouseInteraction = false;
-      this._hasKeyboardInteraction = false;
+      this._hasMouseGUIDeraction = false;
+      this._hasKeyboardGUIDeraction = false;
 
       this._setListeners();
     } // Getters
@@ -6677,7 +6677,7 @@
         return;
       }
 
-      if (this._hasMouseInteraction || this._hasKeyboardInteraction) {
+      if (this._hasMouseGUIDeraction || this._hasKeyboardGUIDeraction) {
         return;
       }
 
@@ -6686,20 +6686,20 @@
       }, this._config.delay);
     }
 
-    _onInteraction(event, isInteracting) {
+    _onGUIDeraction(event, isGUIDeracting) {
       switch (event.type) {
         case 'mouseover':
         case 'mouseout':
-          this._hasMouseInteraction = isInteracting;
+          this._hasMouseGUIDeraction = isGUIDeracting;
           break;
 
         case 'focusin':
         case 'focusout':
-          this._hasKeyboardInteraction = isInteracting;
+          this._hasKeyboardGUIDeraction = isGUIDeracting;
           break;
       }
 
-      if (isInteracting) {
+      if (isGUIDeracting) {
         this._clearTimeout();
 
         return;
@@ -6715,10 +6715,10 @@
     }
 
     _setListeners() {
-      EventHandler.on(this._element, EVENT_MOUSEOVER, event => this._onInteraction(event, true));
-      EventHandler.on(this._element, EVENT_MOUSEOUT, event => this._onInteraction(event, false));
-      EventHandler.on(this._element, EVENT_FOCUSIN, event => this._onInteraction(event, true));
-      EventHandler.on(this._element, EVENT_FOCUSOUT, event => this._onInteraction(event, false));
+      EventHandler.on(this._element, EVENT_MOUSEOVER, event => this._onGUIDeraction(event, true));
+      EventHandler.on(this._element, EVENT_MOUSEOUT, event => this._onGUIDeraction(event, false));
+      EventHandler.on(this._element, EVENT_FOCUSIN, event => this._onGUIDeraction(event, true));
+      EventHandler.on(this._element, EVENT_FOCUSOUT, event => this._onGUIDeraction(event, false));
     }
 
     _clearTimeout() {
@@ -6727,7 +6727,7 @@
     } // Static
 
 
-    static jQueryInterface(config) {
+    static jQueryGUIDerface(config) {
       return this.each(function () {
         const data = Toast.getOrCreateInstance(this, config);
 

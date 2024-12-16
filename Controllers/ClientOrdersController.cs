@@ -1,5 +1,5 @@
-﻿using BestStoreMVC.Models;
-using BestStoreMVC.Services;
+﻿using BestStoreMVC.Data;
+using BestStoreMVC.Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -55,7 +55,7 @@ namespace BestStoreMVC.Controllers
         }
 
 
-        public async Task<IActionResult> Details(int id)
+        public async Task<IActionResult> Details(Guid id)
         {
             var currentUser = await userManager.GetUserAsync(User);
             if (currentUser == null)
@@ -64,7 +64,7 @@ namespace BestStoreMVC.Controllers
             }
 
             var order = context.Orders.Include(o => o.Items)
-                .ThenInclude(oi => oi.Product)
+                .ThenInclude(oi => oi.Book)
                 .Where(o => o.ClientId == currentUser.Id).FirstOrDefault(o => o.Id == id);
 
 

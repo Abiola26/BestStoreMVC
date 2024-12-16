@@ -1,4 +1,6 @@
-﻿using BestStoreMVC.Models;
+﻿using BestStoreMVC.Data;
+using BestStoreMVC.Entity;
+using BestStoreMVC.Implementation.Interface;
 using BestStoreMVC.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,33 +9,35 @@ namespace BestStoreMVC.Controllers
     public class StoreController : Controller
     {
         private readonly ApplicationDbContext context;
+        private readonly IBookService _bookService;
         private readonly int pageSize = 8;
 
-        public StoreController(ApplicationDbContext context)
+        public StoreController(ApplicationDbContext context, IBookService bookService)
         {
             this.context = context;
+            _bookService = bookService;
         }
 
-        public IActionResult Index(int pageIndex, string? search, string? brand, string? category, string? sort)
+        public IActionResult Index(int pageIndex, string? search, string? Author, string? category, string? sort)
         {
-            IQueryable<Product> query = context.Products;
+            IQueryable<Book> query = context.Books;
 
             // search functionality
             if (search != null && search.Length > 0)
             {
-                query = query.Where(p => p.Name.Contains(search));
+                query = query.Where(p => p.Title.Contains(search));
             }
 
 
             // filter functionality
-            if (brand != null && brand.Length > 0)
+            if (Author != null && Author.Length > 0)
             {
-                query = query.Where(p => p.Brand.Contains(brand));
+                query = query.Where(p => p.Author.Contains(Author));
             }
 
             if (category != null && category.Length > 0)
             {
-                query = query.Where(p => p.Category.Contains(category));
+                query = query.Where(p => p.Category.Name.Contains(category));
             }
 
             // sort functionality
@@ -47,7 +51,7 @@ namespace BestStoreMVC.Controllers
             }
             else
             {
-                // newest products first
+                // newest Books first
                 query = query.OrderByDescending(p => p.Id);
             }
 
@@ -64,16 +68,16 @@ namespace BestStoreMVC.Controllers
             query = query.Skip((pageIndex - 1) * pageSize).Take(pageSize);
 
 
-            var products = query.ToList();
+            var Books = query.ToList();
 
-            ViewBag.Products = products;
+            ViewBag.Books = Books;
             ViewBag.PageIndex = pageIndex;
             ViewBag.TotalPages = totalPages;
 
             var storeSearchModel = new StoreSearchModel()
             {
                 Search = search,
-                Brand = brand,
+                Author = Author,
                 Category = category,
                 Sort = sort
             };
@@ -82,15 +86,25 @@ namespace BestStoreMVC.Controllers
         }
 
 
-        public IActionResult Details(int id)
+        //public IActionResult Details(GUID id)
+        //{
+        //    var Book = context.Books.Find(id);
+        //    if (Book == null)
+        //    {
+        //        return RedirectToAction("Index", "Store");
+        //    }
+
+        //    return View(Book);
+        //}
+
+        public async Task<IActionResult> Details(Guid id)
         {
-            var product = context.Products.Find(id);
-            if (product == null)
+            var book = await _bookService.GetBookByIdAsync(id);
+            if (book == null)
             {
                 return RedirectToAction("Index", "Store");
             }
-
-            return View(product);
+            return View(book);
         }
     }
 }

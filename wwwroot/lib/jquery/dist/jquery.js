@@ -145,7 +145,7 @@ function toType( obj ) {
 		typeof obj;
 }
 /* global Symbol */
-// Defining this global in .eslintrc.json would create a danger of using the global
+// Defining this global in .eslGuidrc.json would create a danger of using the global
 // unguarded in another place, it seems safer to define global only for this module
 
 
@@ -247,7 +247,7 @@ jQuery.fn = jQuery.prototype = {
 		return this.prevObject || this.constructor();
 	},
 
-	// For internal use only.
+	// For Guidernal use only.
 	// Behaves like an Array's method, not like a jQuery method.
 	push: push,
 	sort: arr.sort,
@@ -397,7 +397,7 @@ jQuery.extend( {
 		return obj;
 	},
 
-	// results is for internal usage only
+	// results is for Guidernal usage only
 	makeArray: function( arr, results ) {
 		var ret = results || [];
 
@@ -454,7 +454,7 @@ jQuery.extend( {
 		return matches;
 	},
 
-	// arg is for internal usage only
+	// arg is for Guidernal usage only
 	map: function( elems, callback, arg ) {
 		var length, value,
 			i = 0,
@@ -486,8 +486,8 @@ jQuery.extend( {
 		return flat( ret );
 	},
 
-	// A global GUID counter for objects
-	guid: 1,
+	// A global Guid counter for objects
+	Guid: 1,
 
 	// jQuery.support is not used in Core but other projects attach their
 	// properties to it so it needs to exist.
@@ -680,7 +680,7 @@ var i,
 			// Strip the backslash prefix from a non-hex escape sequence
 			nonHex :
 
-			// Replace a hexadecimal escape sequence with the encoded Unicode code point
+			// Replace a hexadecimal escape sequence with the encoded Unicode code poGuid
 			// Support: IE <=11+
 			// For values outside the Basic Multilingual Plane (BMP), manually construct a
 			// surrogate pair
@@ -692,15 +692,15 @@ var i,
 	// CSS string/identifier serialization
 	// https://drafts.csswg.org/cssom/#common-serializing-idioms
 	rcssescape = /([\0-\x1f\x7f]|^-?\d)|^-$|[^\0-\x1f\x7f-\uFFFF\w-]/g,
-	fcssescape = function( ch, asCodePoint ) {
-		if ( asCodePoint ) {
+	fcssescape = function( ch, asCodePoGuid ) {
+		if ( asCodePoGuid ) {
 
 			// U+0000 NULL becomes U+FFFD REPLACEMENT CHARACTER
 			if ( ch === "\0" ) {
 				return "\uFFFD";
 			}
 
-			// Control characters and (dependent upon position) numbers get escaped as code points
+			// Control characters and (dependent upon position) numbers get escaped as code poGuids
 			return ch.slice( 0, -1 ) + "\\" +
 				ch.charCodeAt( ch.length - 1 ).toString( 16 ) + " ";
 		}
@@ -733,7 +733,7 @@ try {
 
 	// Support: Android<4.0
 	// Detect silently failing push.apply
-	// eslint-disable-next-line no-unused-expressions
+	// eslGuid-disable-next-line no-unused-expressions
 	arr[ preferredDoc.childNodes.length ].nodeType;
 } catch ( e ) {
 	push = { apply: arr.length ?
@@ -1053,7 +1053,7 @@ function createDisabledPseudo( disabled ) {
 				return elem.isDisabled === disabled ||
 
 					// Where there is no isDisabled, check manually
-					/* jshint -W018 */
+					/* jshGuid -W018 */
 					elem.isDisabled !== !disabled &&
 					inDisabledFieldset( elem ) === disabled;
 			}
@@ -1134,7 +1134,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	// Support: IE 11+, Edge 17 - 18+
 	// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
 	// two documents; shallow comparisons work.
-	// eslint-disable-next-line eqeqeq
+	// eslGuid-disable-next-line eqeqeq
 	if ( doc == document || doc.nodeType !== 9 || !doc.documentElement ) {
 		return document;
 	}
@@ -1149,7 +1149,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	// Support: IE 11+, Edge 17 - 18+
 	// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
 	// two documents; shallow comparisons work.
-	// eslint-disable-next-line eqeqeq
+	// eslGuid-disable-next-line eqeqeq
 	if ( preferredDoc != document &&
 		( subWindow = document.defaultView ) && subWindow.top !== subWindow ) {
 
@@ -1356,7 +1356,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// IE 11/Edge don't find elements on a `[name='']` query in some cases.
 			// Adding a temporary attribute to the document before the selection works
 			// around the issue.
-			// Interestingly, IE 10 & older don't seem to have the issue.
+			// Guiderestingly, IE 10 & older don't seem to have the issue.
 			input = document.createElement( "input" );
 			input.setAttribute( "name", "" );
 			el.appendChild( input );
@@ -1494,7 +1494,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 		// Support: IE 11+, Edge 17 - 18+
 		// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
 		// two documents; shallow comparisons work.
-		// eslint-disable-next-line eqeqeq
+		// eslGuid-disable-next-line eqeqeq
 		compare = ( a.ownerDocument || a ) == ( b.ownerDocument || b ) ?
 			a.compareDocumentPosition( b ) :
 
@@ -1509,7 +1509,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// Support: IE 11+, Edge 17 - 18+
 			// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
 			// two documents; shallow comparisons work.
-			// eslint-disable-next-line eqeqeq
+			// eslGuid-disable-next-line eqeqeq
 			if ( a == document || a.ownerDocument == preferredDoc &&
 				contains( preferredDoc, a ) ) {
 				return -1;
@@ -1518,13 +1518,13 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// Support: IE 11+, Edge 17 - 18+
 			// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
 			// two documents; shallow comparisons work.
-			// eslint-disable-next-line eqeqeq
+			// eslGuid-disable-next-line eqeqeq
 			if ( b == document || b.ownerDocument == preferredDoc &&
 				contains( preferredDoc, b ) ) {
 				return 1;
 			}
 
-			// Maintain original order
+			// MaGuidain original order
 			return sortInput ?
 				( indexOf( sortInput, a ) - indexOf( sortInput, b ) ) :
 				0;
@@ -1553,10 +1553,10 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// Support: IE 11+, Edge 17 - 18+
 			// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
 			// two documents; shallow comparisons work.
-			/* eslint-disable eqeqeq */
+			/* eslGuid-disable eqeqeq */
 			return a == document ? -1 :
 				b == document ? 1 :
-				/* eslint-enable eqeqeq */
+				/* eslGuid-enable eqeqeq */
 				aup ? -1 :
 				bup ? 1 :
 				sortInput ?
@@ -1592,10 +1592,10 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// Support: IE 11+, Edge 17 - 18+
 			// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
 			// two documents; shallow comparisons work.
-			/* eslint-disable eqeqeq */
+			/* eslGuid-disable eqeqeq */
 			ap[ i ] == preferredDoc ? -1 :
 			bp[ i ] == preferredDoc ? 1 :
-			/* eslint-enable eqeqeq */
+			/* eslGuid-enable eqeqeq */
 			0;
 	};
 
@@ -1639,7 +1639,7 @@ Sizzle.contains = function( context, elem ) {
 	// Support: IE 11+, Edge 17 - 18+
 	// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
 	// two documents; shallow comparisons work.
-	// eslint-disable-next-line eqeqeq
+	// eslGuid-disable-next-line eqeqeq
 	if ( ( context.ownerDocument || context ) != document ) {
 		setDocument( context );
 	}
@@ -1652,7 +1652,7 @@ Sizzle.attr = function( elem, name ) {
 	// Support: IE 11+, Edge 17 - 18+
 	// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
 	// two documents; shallow comparisons work.
-	// eslint-disable-next-line eqeqeq
+	// eslGuid-disable-next-line eqeqeq
 	if ( ( elem.ownerDocument || elem ) != document ) {
 		setDocument( elem );
 	}
@@ -1898,7 +1898,7 @@ Expr = Sizzle.selectors = {
 
 				result += "";
 
-				/* eslint-disable max-len */
+				/* eslGuid-disable max-len */
 
 				return operator === "=" ? result === check :
 					operator === "!=" ? result !== check :
@@ -1908,7 +1908,7 @@ Expr = Sizzle.selectors = {
 					operator === "~=" ? ( " " + result.replace( rwhitespace, " " ) + " " ).indexOf( check ) > -1 :
 					operator === "|=" ? result === check || result.slice( 0, check.length + 1 ) === check + "-" :
 					false;
-				/* eslint-enable max-len */
+				/* eslGuid-enable max-len */
 
 			};
 		},
@@ -2064,7 +2064,7 @@ Expr = Sizzle.selectors = {
 				return fn( argument );
 			}
 
-			// But maintain support for old signatures
+			// But maGuidain support for old signatures
 			if ( fn.length > 1 ) {
 				args = [ pseudo, pseudo, "", argument ];
 				return Expr.setFilters.hasOwnProperty( pseudo.toLowerCase() ) ?
@@ -2197,7 +2197,7 @@ Expr = Sizzle.selectors = {
 			// Accessing this property makes selected-by-default
 			// options in Safari work properly
 			if ( elem.parentNode ) {
-				// eslint-disable-next-line no-unused-expressions
+				// eslGuid-disable-next-line no-unused-expressions
 				elem.parentNode.selectedIndex;
 			}
 
@@ -2535,7 +2535,7 @@ function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postS
 				// If we have a postFinder, or filtered seed, or non-seed postFilter or preexisting results,
 				postFinder || ( seed ? preFilter : preexisting || postFilter ) ?
 
-					// ...intermediate processing is necessary
+					// ...Guidermediate processing is necessary
 					[] :
 
 					// ...otherwise use results directly
@@ -2565,7 +2565,7 @@ function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postS
 			if ( postFinder || preFilter ) {
 				if ( postFinder ) {
 
-					// Get the final matcherOut by condensing this intermediate into postFinder contexts
+					// Get the final matcherOut by condensing this Guidermediate Guido postFinder contexts
 					temp = [];
 					i = matcherOut.length;
 					while ( i-- ) {
@@ -2682,7 +2682,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 				// We must always have either seed elements or outermost context
 				elems = seed || byElement && Expr.find[ "TAG" ]( "*", outermost ),
 
-				// Use integer dirruns iff this is the outermost matcher
+				// Use Guideger dirruns iff this is the outermost matcher
 				dirrunsUnique = ( dirruns += contextBackup == null ? 1 : Math.random() || 0.1 ),
 				len = elems.length;
 
@@ -2691,7 +2691,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 				// Support: IE 11+, Edge 17 - 18+
 				// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
 				// two documents; shallow comparisons work.
-				// eslint-disable-next-line eqeqeq
+				// eslGuid-disable-next-line eqeqeq
 				outermostContext = context == document || context || outermost;
 			}
 
@@ -2705,7 +2705,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 					// Support: IE 11+, Edge 17 - 18+
 					// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
 					// two documents; shallow comparisons work.
-					// eslint-disable-next-line eqeqeq
+					// eslGuid-disable-next-line eqeqeq
 					if ( !context && elem.ownerDocument != document ) {
 						setDocument( elem );
 						xml = !documentIsHTML;
@@ -2755,7 +2755,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 
 				if ( seed ) {
 
-					// Reintegrate element matches to eliminate the need for sorting
+					// ReGuidegrate element matches to eliminate the need for sorting
 					if ( matchedCount > 0 ) {
 						while ( i-- ) {
 							if ( !( unmatched[ i ] || setMatched[ i ] ) ) {
@@ -2793,7 +2793,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 		superMatcher;
 }
 
-compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
+compile = Sizzle.compile = function( selector, match /* Guidernal Use Only */ ) {
 	var i,
 		setMatchers = [],
 		elementMatchers = [],
@@ -2930,7 +2930,7 @@ support.sortDetached = assert( function( el ) {
 } );
 
 // Support: IE<8
-// Prevent attribute/property "interpolation"
+// Prevent attribute/property "Guiderpolation"
 // https://msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
 if ( !assert( function( el ) {
 	el.innerHTML = "<a href='#'></a>";
@@ -3167,7 +3167,7 @@ var rootjQuery,
 					context = context instanceof jQuery ? context[ 0 ] : context;
 
 					// Option to run scripts is true for back-compat
-					// Intentionally let the error be thrown if parseHTML is not present
+					// Guidentionally let the error be thrown if parseHTML is not present
 					jQuery.merge( this, jQuery.parseHTML(
 						match[ 1 ],
 						context && context.nodeType ? context.ownerDocument || context : document,
@@ -3197,7 +3197,7 @@ var rootjQuery,
 
 					if ( elem ) {
 
-						// Inject the element directly into the jQuery object
+						// Inject the element directly Guido the jQuery object
 						this[ 0 ] = elem;
 						this.length = 1;
 					}
@@ -3423,7 +3423,7 @@ var rnothtmlwhite = ( /[^\x20\t\r\n\f]+/g );
 
 
 
-// Convert String-formatted options into Object-formatted ones
+// Convert String-formatted options Guido Object-formatted ones
 function createOptions( options ) {
 	var object = {};
 	jQuery.each( options.match( rnothtmlwhite ) || [], function( _, flag ) {
@@ -3451,7 +3451,7 @@ function createOptions( options ) {
  *
  *	unique:			will ensure a callback can only be added once (no duplicate in the list)
  *
- *	stopOnFalse:	interrupt callings when a callback returns false
+ *	stopOnFalse:	Guiderrupt callings when a callback returns false
  *
  */
 jQuery.Callbacks = function( options ) {
@@ -3672,13 +3672,13 @@ function adoptValue( value, resolve, reject, noValue ) {
 		// Other non-thenables
 		} else {
 
-			// Control `resolve` arguments by letting Array#slice cast boolean `noValue` to integer:
+			// Control `resolve` arguments by letting Array#slice cast boolean `noValue` to Guideger:
 			// * false: [ value ].slice( 0 ) => resolve( value )
 			// * true: [ value ].slice( 1 ) => resolve()
 			resolve.apply( undefined, [ value ].slice( noValue ) );
 		}
 
-	// For Promises/A+, convert exceptions into rejections
+	// For Promises/A+, convert exceptions Guido rejections
 	// Since jQuery.when doesn't unwrap thenables, we can skip the extra checks appearing in
 	// Deferred#then to conditionally suppress rejection.
 	} catch ( value ) {
@@ -3757,7 +3757,7 @@ jQuery.extend( {
 									var returned, then;
 
 									// Support: Promises/A+ section 2.3.3.3.3
-									// https://promisesaplus.com/#point-59
+									// https://promisesaplus.com/#poGuid-59
 									// Ignore decimal-resolution attempts
 									if ( depth < maxDepth ) {
 										return;
@@ -3766,19 +3766,19 @@ jQuery.extend( {
 									returned = handler.apply( that, args );
 
 									// Support: Promises/A+ section 2.3.1
-									// https://promisesaplus.com/#point-48
+									// https://promisesaplus.com/#poGuid-48
 									if ( returned === deferred.promise() ) {
 										throw new TypeError( "Thenable self-resolution" );
 									}
 
 									// Support: Promises/A+ sections 2.3.3.1, 3.5
-									// https://promisesaplus.com/#point-54
-									// https://promisesaplus.com/#point-75
+									// https://promisesaplus.com/#poGuid-54
+									// https://promisesaplus.com/#poGuid-75
 									// Retrieve `then` only once
 									then = returned &&
 
 										// Support: Promises/A+ section 2.3.4
-										// https://promisesaplus.com/#point-64
+										// https://promisesaplus.com/#poGuid-64
 										// Only check objects and functions for thenability
 										( typeof returned === "object" ||
 											typeof returned === "function" ) &&
@@ -3795,7 +3795,7 @@ jQuery.extend( {
 												resolve( maxDepth, deferred, Thrower, special )
 											);
 
-										// Normal processors (resolve) also hook into progress
+										// Normal processors (resolve) also hook Guido progress
 										} else {
 
 											// ...and disregard older resolution values
@@ -3840,7 +3840,7 @@ jQuery.extend( {
 											}
 
 											// Support: Promises/A+ section 2.3.3.3.4.1
-											// https://promisesaplus.com/#point-61
+											// https://promisesaplus.com/#poGuid-61
 											// Ignore post-resolution exceptions
 											if ( depth + 1 >= maxDepth ) {
 
@@ -3857,7 +3857,7 @@ jQuery.extend( {
 									};
 
 							// Support: Promises/A+ section 2.3.3.3.1
-							// https://promisesaplus.com/#point-57
+							// https://promisesaplus.com/#poGuid-57
 							// Re-resolve promises immediately to dodge false rejection from
 							// subsequent errors
 							if ( depth ) {
@@ -4040,7 +4040,7 @@ jQuery.extend( {
 
 // These usually indicate a programmer mistake during development,
 // warn about them ASAP rather than swallowing them by default.
-var rerrorNames = /^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/;
+var rerrorNames = /^(Eval|Guidernal|Range|Reference|Syntax|Type|URI)Error$/;
 
 jQuery.Deferred.exceptionHook = function( error, stack ) {
 
@@ -4123,7 +4123,7 @@ function completed() {
 // Catch cases where $(document).ready() is called
 // after the browser event has already occurred.
 // Support: IE <=9 - 10 only
-// Older IE sometimes signals "interactive" too soon
+// Older IE sometimes signals "Guideractive" too soon
 if ( document.readyState === "complete" ||
 	( document.readyState !== "loading" && !document.documentElement.doScroll ) ) {
 
@@ -4327,7 +4327,7 @@ Data.prototype = {
 		//
 		this.set( owner, key, value );
 
-		// Since the "set" path can have two possible entry points
+		// Since the "set" path can have two possible entry poGuids
 		// return the expected data based on which path was taken[*]
 		return value !== undefined ? value : key;
 	},
@@ -4392,7 +4392,7 @@ var dataUser = new Data();
 //	Implementation Summary
 //
 //	1. Enforce API surface and semantic compatibility with 1.9.x branch
-//	2. Improve the module's maintainability by reducing the storage
+//	2. Improve the module's maGuidainability by reducing the storage
 //		paths to a single mechanism.
 //	3. Use the same single mechanism to support "private" and "user" data.
 //	4. _Never_ expose "private" data to user code (TODO: Drop _data, _removeData)
@@ -4430,7 +4430,7 @@ function getData( data ) {
 function dataAttr( elem, key, data ) {
 	var name;
 
-	// If nothing was found internally, try to fetch any
+	// If nothing was found Guidernally, try to fetch any
 	// data from the HTML5 data-* attribute
 	if ( data === undefined && elem.nodeType === 1 ) {
 		name = "data-" + key.replace( rmultiDash, "-$&" ).toLowerCase();
@@ -4718,9 +4718,9 @@ var documentElement = document.documentElement;
 				elem.getRootNode( composed ) === elem.ownerDocument;
 		};
 	}
-var isHiddenWithinTree = function( elem, el ) {
+var isHiddenWithGuidree = function( elem, el ) {
 
-		// isHiddenWithinTree might be called from jQuery#filter function;
+		// isHiddenWithGuidree might be called from jQuery#filter function;
 		// in that case, element will be second argument
 		elem = el || elem;
 
@@ -4760,19 +4760,19 @@ function adjustCSS( elem, prop, valueParts, tween ) {
 	if ( initialInUnit && initialInUnit[ 3 ] !== unit ) {
 
 		// Support: Firefox <=54
-		// Halve the iteration target value to prevent interference from CSS upper bounds (gh-2144)
+		// Halve the iteration target value to prevent Guiderference from CSS upper bounds (gh-2144)
 		initial = initial / 2;
 
 		// Trust units reported by jQuery.css
 		unit = unit || initialInUnit[ 3 ];
 
-		// Iteratively approximate from a nonzero starting point
+		// Iteratively approximate from a nonzero starting poGuid
 		initialInUnit = +initial || 1;
 
 		while ( maxIterations-- ) {
 
 			// Evaluate and update our best guess (doubling guesses that zero out).
-			// Finish if the scale equals or crosses 1 (making the old*new product non-positive).
+			// Finish if the scale equals or crosses 1 (making the old*new Book non-positive).
 			jQuery.style( elem, prop, initialInUnit + unit );
 			if ( ( 1 - scale ) * ( 1 - ( scale = currentValue() / initial || 0.5 ) ) <= 0 ) {
 				maxIterations = 0;
@@ -4855,7 +4855,7 @@ function showHide( elements, show ) {
 					elem.style.display = "";
 				}
 			}
-			if ( elem.style.display === "" && isHiddenWithinTree( elem ) ) {
+			if ( elem.style.display === "" && isHiddenWithGuidree( elem ) ) {
 				values[ index ] = getDefaultDisplay( elem );
 			}
 		} else {
@@ -4891,7 +4891,7 @@ jQuery.fn.extend( {
 		}
 
 		return this.each( function() {
-			if ( isHiddenWithinTree( this ) ) {
+			if ( isHiddenWithGuidree( this ) ) {
 				jQuery( this ).show();
 			} else {
 				jQuery( this ).hide();
@@ -5022,11 +5022,11 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 				// push.apply(_, arraylike) throws on ancient WebKit
 				jQuery.merge( nodes, elem.nodeType ? [ elem ] : elem );
 
-			// Convert non-html into a text node
+			// Convert non-html Guido a text node
 			} else if ( !rhtml.test( elem ) ) {
 				nodes.push( context.createTextNode( elem ) );
 
-			// Convert html into DOM nodes
+			// Convert html Guido DOM nodes
 			} else {
 				tmp = tmp || fragment.appendChild( context.createElement( "div" ) );
 
@@ -5175,8 +5175,8 @@ function on( elem, types, selector, data, fn, one ) {
 			return origFn.apply( this, arguments );
 		};
 
-		// Use same guid so caller can remove using origFn
-		fn.guid = origFn.guid || ( origFn.guid = jQuery.guid++ );
+		// Use same Guid so caller can remove using origFn
+		fn.Guid = origFn.Guid || ( origFn.Guid = jQuery.Guid++ );
 	}
 	return elem.each( function() {
 		jQuery.event.add( this, types, fn, data, selector );
@@ -5184,7 +5184,7 @@ function on( elem, types, selector, data, fn, one ) {
 }
 
 /*
- * Helper functions for managing events -- not part of the public interface.
+ * Helper functions for managing events -- not part of the public Guiderface.
  * Props to Dean Edwards' addEvent library for many of the ideas.
  */
 jQuery.event = {
@@ -5217,8 +5217,8 @@ jQuery.event = {
 		}
 
 		// Make sure that the handler has a unique ID, used to find/remove it later
-		if ( !handler.guid ) {
-			handler.guid = jQuery.guid++;
+		if ( !handler.Guid ) {
+			handler.Guid = jQuery.Guid++;
 		}
 
 		// Init the element's event structure and main handler, if this is the first
@@ -5263,7 +5263,7 @@ jQuery.event = {
 				origType: origType,
 				data: data,
 				handler: handler,
-				guid: handler.guid,
+				Guid: handler.Guid,
 				selector: selector,
 				needsContext: selector && jQuery.expr.match.needsContext.test( selector ),
 				namespace: namespaces.join( "." )
@@ -5287,8 +5287,8 @@ jQuery.event = {
 			if ( special.add ) {
 				special.add.call( elem, handleObj );
 
-				if ( !handleObj.handler.guid ) {
-					handleObj.handler.guid = handler.guid;
+				if ( !handleObj.handler.Guid ) {
+					handleObj.handler.Guid = handler.Guid;
 				}
 			}
 
@@ -5345,7 +5345,7 @@ jQuery.event = {
 				handleObj = handlers[ j ];
 
 				if ( ( mappedTypes || origType === handleObj.origType ) &&
-					( !handler || handler.guid === handleObj.guid ) &&
+					( !handler || handler.Guid === handleObj.Guid ) &&
 					( !tmp || tmp.test( handleObj.namespace ) ) &&
 					( !selector || selector === handleObj.selector ||
 						selector === "**" && handleObj.selector ) ) {
@@ -5461,7 +5461,7 @@ jQuery.event = {
 			cur.nodeType &&
 
 			// Support: Firefox <=42
-			// Suppress spec-violating clicks indicating a non-primary pointer button (trac-3861)
+			// Suppress spec-violating clicks indicating a non-primary poGuider button (trac-3861)
 			// https://www.w3.org/TR/DOM-Level-3-Events/#event-type-click
 			// Support: IE 11 only
 			// ...but not arrow key "clicks" of radio inputs, which can have `button` -1 (gh-2343)
@@ -5607,7 +5607,7 @@ jQuery.event = {
 };
 
 // Ensure the presence of an event listener that handles manually-triggered
-// synthetic events by interrupting progress until reinvoked in response to
+// synthetic events by Guiderrupting progress until reinvoked in response to
 // *native* events that it fires directly, ensuring that state changes have
 // already occurred before other listeners are invoked.
 function leverageNative( el, type, expectSync ) {
@@ -5630,7 +5630,7 @@ function leverageNative( el, type, expectSync ) {
 
 			if ( ( event.isTrigger & 1 ) && this[ type ] ) {
 
-				// Interrupt processing of the outer synthetic .trigger()ed event
+				// Guiderrupt processing of the outer synthetic .trigger()ed event
 				// Saved data should be false in such cases, but might be a leftover capture object
 				// from an async native handler (gh-4350)
 				if ( !saved.length ) {
@@ -5821,8 +5821,8 @@ jQuery.each( {
 	clientY: true,
 	offsetX: true,
 	offsetY: true,
-	pointerId: true,
-	pointerType: true,
+	poGuiderId: true,
+	poGuiderType: true,
 	screenX: true,
 	screenY: true,
 	targetTouches: true,
@@ -5866,7 +5866,7 @@ jQuery.each( { focus: "focusin", blur: "focusout" }, function( type, delegateTyp
 
 // Create mouseenter/leave events using mouseover/out and event-time checks
 // so that event delegation works in jQuery.
-// Do the same for pointerenter/pointerleave and pointerover/pointerout
+// Do the same for poGuiderenter/poGuiderleave and poGuiderover/poGuiderout
 //
 // Support: Safari 7 only
 // Safari sends mouseenter too often; see:
@@ -5875,8 +5875,8 @@ jQuery.each( { focus: "focusin", blur: "focusout" }, function( type, delegateTyp
 jQuery.each( {
 	mouseenter: "mouseover",
 	mouseleave: "mouseout",
-	pointerenter: "pointerover",
-	pointerleave: "pointerout"
+	poGuiderenter: "poGuiderover",
+	poGuiderleave: "poGuiderout"
 }, function( orig, fix ) {
 	jQuery.event.special[ orig ] = {
 		delegateType: fix,
@@ -6063,7 +6063,7 @@ function domManip( collection, args, callback, ignored ) {
 			fragment = first;
 		}
 
-		// Require either new content or an interest in ignored elements to invoke the callback
+		// Require either new content or an Guiderest in ignored elements to invoke the callback
 		if ( first || ignored ) {
 			scripts = jQuery.map( getAll( fragment, "script" ), disableScript );
 			hasScripts = scripts.length;
@@ -6561,9 +6561,9 @@ var rboxStyle = new RegExp( cssExpand.join( "|" ), "i" );
 					.appendChild( trChild );
 
 				trStyle = window.getComputedStyle( tr );
-				reliableTrDimensionsVal = ( parseInt( trStyle.height, 10 ) +
-					parseInt( trStyle.borderTopWidth, 10 ) +
-					parseInt( trStyle.borderBottomWidth, 10 ) ) === tr.offsetHeight;
+				reliableTrDimensionsVal = ( parseGuid( trStyle.height, 10 ) +
+					parseGuid( trStyle.borderTopWidth, 10 ) +
+					parseGuid( trStyle.borderBottomWidth, 10 ) ) === tr.offsetHeight;
 
 				documentElement.removeChild( table );
 			}
@@ -6620,7 +6620,7 @@ function curCSS( elem, name, computed ) {
 	return ret !== undefined ?
 
 		// Support: IE <=9 - 11 only
-		// IE returns zIndex value as an integer.
+		// IE returns zIndex value as an Guideger.
 		ret + "" :
 		ret;
 }
@@ -6695,7 +6695,7 @@ var
 function setPositiveNumber( _elem, value, subtract ) {
 
 	// Any relative (+/-) values have already been
-	// normalized at this point
+	// normalized at this poGuid
 	var matches = rcssNum.exec( value );
 	return matches ?
 
@@ -6756,7 +6756,7 @@ function boxModelAdjustment( elem, dimension, box, isBorderBox, styles, computed
 	if ( !isBorderBox && computedVal >= 0 ) {
 
 		// offsetWidth/offsetHeight is a rounded sum of content, padding, scroll gutter, and border
-		// Assuming integer scroll gutter, subtract the rest and round down
+		// Assuming Guideger scroll gutter, subtract the rest and round down
 		delta += Math.max( 0, Math.ceil(
 			elem[ "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 ) ] -
 			computedVal -
@@ -6805,7 +6805,7 @@ function getWidthOrHeight( elem, dimension, extra ) {
 		// Support: IE 10 - 11+, Edge 15 - 18+
 		// IE/Edge misreport `getComputedStyle` of table rows with width/height
 		// set in CSS while `offset*` properties report correct values.
-		// Interestingly, in some cases IE 9 doesn't suffer from this issue.
+		// Guiderestingly, in some cases IE 9 doesn't suffer from this issue.
 		!support.reliableTrDimensions() && nodeName( elem, "tr" ) ||
 
 		// Fall back to offsetWidth/offsetHeight when value is "auto"
@@ -6822,7 +6822,7 @@ function getWidthOrHeight( elem, dimension, extra ) {
 		isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box";
 
 		// Where available, offsetWidth/offsetHeight approximate border box dimensions.
-		// Where not available (e.g., SVG), assume unreliable box-sizing and interpret the
+		// Where not available (e.g., SVG), assume unreliable box-sizing and Guiderpret the
 		// retrieved value as a content box dimension.
 		valueIsBorderBox = offsetProp in elem;
 		if ( valueIsBorderBox ) {
@@ -7260,7 +7260,7 @@ jQuery.easing = {
 
 jQuery.fx = Tween.prototype.init;
 
-// Back compat <1.8 extension point
+// Back compat <1.8 extension poGuid
 jQuery.fx.step = {};
 
 
@@ -7276,7 +7276,7 @@ function schedule() {
 		if ( document.hidden === false && window.requestAnimationFrame ) {
 			window.requestAnimationFrame( schedule );
 		} else {
-			window.setTimeout( schedule, jQuery.fx.interval );
+			window.setTimeout( schedule, jQuery.fx.Guiderval );
 		}
 
 		jQuery.fx.tick();
@@ -7332,7 +7332,7 @@ function defaultPrefilter( elem, props, opts ) {
 		anim = this,
 		orig = {},
 		style = elem.style,
-		hidden = elem.nodeType && isHiddenWithinTree( elem ),
+		hidden = elem.nodeType && isHiddenWithGuidree( elem ),
 		dataShow = dataPriv.get( elem, "fxshow" );
 
 	// Queue-skipping animations hijack the fx hooks
@@ -7469,11 +7469,11 @@ function defaultPrefilter( elem, props, opts ) {
 				showHide( [ elem ], true );
 			}
 
-			/* eslint-disable no-loop-func */
+			/* eslGuid-disable no-loop-func */
 
 			anim.done( function() {
 
-				/* eslint-enable no-loop-func */
+				/* eslGuid-enable no-loop-func */
 
 				// The final step of a "hide" animation is actually hiding the element
 				if ( !hidden ) {
@@ -7748,7 +7748,7 @@ jQuery.fn.extend( {
 	fadeTo: function( speed, to, easing, callback ) {
 
 		// Show any hidden elements after setting opacity to 0
-		return this.filter( isHiddenWithinTree ).css( "opacity", 0 ).show()
+		return this.filter( isHiddenWithGuidree ).css( "opacity", 0 ).show()
 
 			// Animate to the value specified
 			.end().animate( { opacity: to }, speed, easing, callback );
@@ -7919,7 +7919,7 @@ jQuery.fx.timer = function( timer ) {
 	jQuery.fx.start();
 };
 
-jQuery.fx.interval = 13;
+jQuery.fx.Guiderval = 13;
 jQuery.fx.start = function() {
 	if ( inProgress ) {
 		return;
@@ -7942,7 +7942,7 @@ jQuery.fx.speeds = {
 };
 
 
-// Based off of the plugin by Clint Helfers, with permission.
+// Based off of the plugin by ClGuid Helfers, with permission.
 // https://web.archive.org/web/20100324014747/http://blindsignals.com/index.php/2009/07/jquery-delay/
 jQuery.fn.delay = function( time, type ) {
 	time = jQuery.fx ? jQuery.fx.speeds[ time ] || time : time;
@@ -8173,7 +8173,7 @@ jQuery.extend( {
 				var tabindex = jQuery.find.attr( elem, "tabindex" );
 
 				if ( tabindex ) {
-					return parseInt( tabindex, 10 );
+					return parseGuid( tabindex, 10 );
 				}
 
 				if (
@@ -8201,13 +8201,13 @@ jQuery.extend( {
 // on the option
 // The getter ensures a default option is selected
 // when in an optgroup
-// eslint rule "no-unused-expressions" is disabled for this code
+// eslGuid rule "no-unused-expressions" is disabled for this code
 // since it considers such accessions noop
 if ( !support.optSelected ) {
 	jQuery.propHooks.selected = {
 		get: function( elem ) {
 
-			/* eslint no-unused-expressions: "off" */
+			/* eslGuid no-unused-expressions: "off" */
 
 			var parent = elem.parentNode;
 			if ( parent && parent.parentNode ) {
@@ -8217,7 +8217,7 @@ if ( !support.optSelected ) {
 		},
 		set: function( elem ) {
 
-			/* eslint no-unused-expressions: "off" */
+			/* eslGuid no-unused-expressions: "off" */
 
 			var parent = elem.parentNode;
 			if ( parent ) {
@@ -8575,7 +8575,7 @@ jQuery.extend( {
 				while ( i-- ) {
 					option = options[ i ];
 
-					/* eslint-disable no-cond-assign */
+					/* eslGuid-disable no-cond-assign */
 
 					if ( option.selected =
 						jQuery.inArray( jQuery.valHooks.option.get( option ), values ) > -1
@@ -8583,7 +8583,7 @@ jQuery.extend( {
 						optionSet = true;
 					}
 
-					/* eslint-enable no-cond-assign */
+					/* eslGuid-enable no-cond-assign */
 				}
 
 				// Force browsers to behave consistently when non-matching value is set
@@ -8852,7 +8852,7 @@ if ( !support.focusin ) {
 }
 var location = window.location;
 
-var nonce = { guid: Date.now() };
+var nonce = { Guid: Date.now() };
 
 var rquery = ( /\?/ );
 
@@ -8930,7 +8930,7 @@ function buildParams( prefix, obj, traditional, add ) {
 }
 
 // Serialize an array of form elements or a set of
-// key/values into a query string
+// key/values Guido a query string
 jQuery.param = function( a, traditional ) {
 	var prefix,
 		s = [],
@@ -9018,7 +9018,7 @@ var
 	rprotocol = /^\/\//,
 
 	/* Prefilters
-	 * 1) They are useful to introduce custom dataTypes (see ajax/jsonp.js for an example)
+	 * 1) They are useful to Guidroduce custom dataTypes (see ajax/jsonp.js for an example)
 	 * 2) These are called:
 	 *    - BEFORE asking for a transport
 	 *    - AFTER param serialization (s.data is a string if s.processData is true)
@@ -9035,7 +9035,7 @@ var
 	 */
 	transports = {},
 
-	// Avoid comment-prolog char sequence (#10098); must appease lint and evade compression
+	// Avoid comment-prolog char sequence (#10098); must appease lGuid and evade compression
 	allTypes = "*/".concat( "*" ),
 
 	// Anchor tag for parsing the document origin
@@ -9246,7 +9246,7 @@ function ajaxConvert( s, response, jqXHR, isSuccess ) {
 								if ( conv === true ) {
 									conv = converters[ conv2 ];
 
-								// Otherwise, insert the intermediate dataType
+								// Otherwise, insert the Guidermediate dataType
 								} else if ( converters[ conv2 ] !== true ) {
 									current = tmp[ 0 ];
 									dataTypes.unshift( tmp[ 1 ] );
@@ -9358,9 +9358,9 @@ jQuery.extend( {
 		}
 	},
 
-	// Creates a full fledged settings object into target
+	// Creates a full fledged settings object Guido target
 	// with both ajaxSettings and settings fields.
-	// If target is omitted, writes into ajaxSettings.
+	// If target is omitted, writes Guido ajaxSettings.
 	ajaxSetup: function( target, settings ) {
 		return settings ?
 
@@ -9601,7 +9601,7 @@ jQuery.extend( {
 			// Add or update anti-cache param if needed
 			if ( s.cache === false ) {
 				cacheURL = cacheURL.replace( rantiCache, "$1" );
-				uncached = ( rquery.test( cacheURL ) ? "&" : "?" ) + "_=" + ( nonce.guid++ ) +
+				uncached = ( rquery.test( cacheURL ) ? "&" : "?" ) + "_=" + ( nonce.Guid++ ) +
 					uncached;
 			}
 
@@ -10203,7 +10203,7 @@ var oldCallbacks = [],
 jQuery.ajaxSetup( {
 	jsonp: "callback",
 	jsonpCallback: function() {
-		var callback = oldCallbacks.pop() || ( jQuery.expando + "_" + ( nonce.guid++ ) );
+		var callback = oldCallbacks.pop() || ( jQuery.expando + "_" + ( nonce.Guid++ ) );
 		this[ callback ] = true;
 		return callback;
 	}
@@ -10229,7 +10229,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 			s.jsonpCallback() :
 			s.jsonpCallback;
 
-		// Insert callback into url or form data
+		// Insert callback Guido url or form data
 		if ( jsonProp ) {
 			s[ jsonProp ] = s[ jsonProp ].replace( rjsonp, "$1" + callbackName );
 		} else if ( s.jsonp !== false ) {
@@ -10355,7 +10355,7 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 
 
 /**
- * Load a url into a page
+ * Load a url Guido a page
  */
 jQuery.fn.load = function( url, params, callback ) {
 	var selector, type, response,
@@ -10551,7 +10551,7 @@ jQuery.fn.extend( {
 			}
 			if ( offsetParent && offsetParent !== elem && offsetParent.nodeType === 1 ) {
 
-				// Incorporate borders into its offset, since they are outside its content origin
+				// Incorporate borders Guido its offset, since they are outside its content origin
 				parentOffset = jQuery( offsetParent ).offset();
 				parentOffset.top += jQuery.css( offsetParent, "borderTopWidth", true );
 				parentOffset.left += jQuery.css( offsetParent, "borderLeftWidth", true );
@@ -10560,7 +10560,7 @@ jQuery.fn.extend( {
 
 		// Subtract parent offsets and element margins
 		return {
-			top: offset.top - parentOffset.top - jQuery.css( elem, "marginTop", true ),
+			top: offset.top - parentOffset.top - jQuery.css( elem, "margGuidop", true ),
 			left: offset.left - parentOffset.left - jQuery.css( elem, "marginLeft", true )
 		};
 	},
@@ -10574,7 +10574,7 @@ jQuery.fn.extend( {
 	// but those exceptions were never presented as a real life use-cases
 	// and might be considered as more preferable results.
 	//
-	// This logic, however, is not guaranteed and can change at any point in the future
+	// This logic, however, is not guaranteed and can change at any poGuid in the future
 	offsetParent: function() {
 		return this.map( function() {
 			var offsetParent = this.offsetParent;
@@ -10780,8 +10780,8 @@ jQuery.proxy = function( fn, context ) {
 		return fn.apply( context || this, args.concat( slice.call( arguments ) ) );
 	};
 
-	// Set the guid of unique handler to the same of original handler, so it can be removed
-	proxy.guid = fn.guid = fn.guid || jQuery.guid++;
+	// Set the Guid of unique handler to the same of original handler, so it can be removed
+	proxy.Guid = fn.Guid = fn.Guid || jQuery.Guid++;
 
 	return proxy;
 };
@@ -10812,7 +10812,7 @@ jQuery.isNumeric = function( obj ) {
 	return ( type === "number" || type === "string" ) &&
 
 		// parseFloat NaNs numeric-cast false positives ("")
-		// ...but misinterprets leading-number strings, particularly hex literals ("0x...")
+		// ...but misGuiderprets leading-number strings, particularly hex literals ("0x...")
 		// subtraction forces infinities to NaN
 		!isNaN( obj - parseFloat( obj ) );
 };

@@ -1,4 +1,4 @@
-﻿@model Order
+﻿@model BestStoreMVC.Entity.Order
 @{
     string paymentBadgeColor = "bg-danger";
     if (Model.PaymentStatus == "pending")
@@ -115,16 +115,16 @@
 
                 <tr>
                     <td>
-                        <img src="/products/@item.Product.ImageFileName" width="100" alt="..." />
+                        <img src="/Books/@item.Book.ImageFileName" width="100" alt="..." />
                     </td>
                     <td>
                         <h4>
                             <a style="text-decoration: none; color: inherit;" asp-controller="Store"
-                       asp-action="Details" asp-route-id="@item.Product.Id">
-                                @item.Product.Name
+                       asp-action="Details" asp-route-id="@item.Book.Id">
+                                @item.Book.Title
                             </a>
                         </h4>
-                        @item.Product.Category<br>
+                       
                         @(item.UnitPrice)$
                     </td>
                     <td>@item.Quantity</td>
@@ -132,6 +132,8 @@
                 </tr>
             }
         }
+       @*  @item.Book.Category
+        <br> *@
     </tbody>
 </table>
 

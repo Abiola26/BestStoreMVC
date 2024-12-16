@@ -1,5 +1,6 @@
-﻿using BestStoreMVC.Models;
-using BestStoreMVC.Services;
+﻿using BestStoreMVC.Data;
+using BestStoreMVC.Dto;
+using BestStoreMVC.Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

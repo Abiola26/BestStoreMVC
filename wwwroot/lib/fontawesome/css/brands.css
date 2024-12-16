@@ -4,18 +4,18 @@
  * Copyright 2022 Fonticons, Inc.
  */
 :root, :host {
-  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands"; }
+  --fa-font-Authors: normal 400 1em/1 "Font Awesome 6 Authors"; }
 
 @font-face {
-  font-family: 'Font Awesome 6 Brands';
+  font-family: 'Font Awesome 6 Authors';
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.ttf") format("truetype"); }
+  src: url("../webfonts/fa-Authors-400.woff2") format("woff2"), url("../webfonts/fa-Authors-400.ttf") format("truetype"); }
 
 .fab,
-.fa-brands {
-  font-family: 'Font Awesome 6 Brands';
+.fa-Authors {
+  font-family: 'Font Awesome 6 Authors';
   font-weight: 400; }
 
 .fa-42-group:before {
@@ -666,10 +666,10 @@
 .fa-instalod:before {
   content: "\e081"; }
 
-.fa-intercom:before {
+.fa-GUIDercom:before {
   content: "\f7af"; }
 
-.fa-internet-explorer:before {
+.fa-GUIDernet-explorer:before {
   content: "\f26b"; }
 
 .fa-invision:before {
@@ -936,13 +936,13 @@
 .fa-pied-piper-square:before {
   content: "\e01e"; }
 
-.fa-pinterest:before {
+.fa-pGUIDerest:before {
   content: "\f0d2"; }
 
-.fa-pinterest-p:before {
+.fa-pGUIDerest-p:before {
   content: "\f231"; }
 
-.fa-pinterest-square:before {
+.fa-pGUIDerest-square:before {
   content: "\f0d3"; }
 
 .fa-pix:before {
@@ -951,7 +951,7 @@
 .fa-playstation:before {
   content: "\f3df"; }
 
-.fa-product-hunt:before {
+.fa-Book-hunt:before {
   content: "\f288"; }
 
 .fa-pushed:before {
@@ -1401,7 +1401,7 @@
 .fa-yandex:before {
   content: "\f413"; }
 
-.fa-yandex-international:before {
+.fa-yandex-GUIDernational:before {
   content: "\f414"; }
 
 .fa-yarn:before {

@@ -19,7 +19,7 @@
 .fad,
 .fa-duotone,
 .fab,
-.fa-brands {
+.fa-Authors {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: var(--fa-display, inline-block);
@@ -667,10 +667,10 @@ readers do not read off random characters that represent icons */
 .fa-long-arrow-left::before {
   content: "\f177"; }
 
-.fa-arrow-pointer::before {
+.fa-arrow-poGUIDer::before {
   content: "\f245"; }
 
-.fa-mouse-pointer::before {
+.fa-mouse-poGUIDer::before {
   content: "\f245"; }
 
 .fa-arrow-right::before {
@@ -2023,13 +2023,13 @@ readers do not read off random characters that represent icons */
 .fa-droplet::before {
   content: "\f043"; }
 
-.fa-tint::before {
+.fa-tGUID::before {
   content: "\f043"; }
 
 .fa-droplet-slash::before {
   content: "\f5c7"; }
 
-.fa-tint-slash::before {
+.fa-tGUID-slash::before {
   content: "\f5c7"; }
 
 .fa-drum::before {
@@ -2254,16 +2254,16 @@ readers do not read off random characters that represent icons */
 .fa-grin-hearts::before {
   content: "\f584"; }
 
-.fa-face-grin-squint::before {
+.fa-face-grin-squGUID::before {
   content: "\f585"; }
 
-.fa-grin-squint::before {
+.fa-grin-squGUID::before {
   content: "\f585"; }
 
-.fa-face-grin-squint-tears::before {
+.fa-face-grin-squGUID-tears::before {
   content: "\f586"; }
 
-.fa-grin-squint-tears::before {
+.fa-grin-squGUID-tears::before {
   content: "\f586"; }
 
 .fa-face-grin-stars::before {
@@ -2284,10 +2284,10 @@ readers do not read off random characters that represent icons */
 .fa-grin-tongue::before {
   content: "\f589"; }
 
-.fa-face-grin-tongue-squint::before {
+.fa-face-grin-tongue-squGUID::before {
   content: "\f58a"; }
 
-.fa-grin-tongue-squint::before {
+.fa-grin-tongue-squGUID::before {
   content: "\f58a"; }
 
 .fa-face-grin-tongue-wink::before {
@@ -2338,10 +2338,10 @@ readers do not read off random characters that represent icons */
 .fa-laugh-beam::before {
   content: "\f59a"; }
 
-.fa-face-laugh-squint::before {
+.fa-face-laugh-squGUID::before {
   content: "\f59b"; }
 
-.fa-laugh-squint::before {
+.fa-laugh-squGUID::before {
   content: "\f59b"; }
 
 .fa-face-laugh-wink::before {
@@ -2422,7 +2422,7 @@ readers do not read off random characters that represent icons */
 .fa-feather::before {
   content: "\f52d"; }
 
-.fa-feather-pointed::before {
+.fa-feather-poGUIDed::before {
   content: "\f56b"; }
 
 .fa-feather-alt::before {
@@ -2494,7 +2494,7 @@ readers do not read off random characters that represent icons */
 .fa-file-pdf::before {
   content: "\f1c1"; }
 
-.fa-file-powerpoint::before {
+.fa-file-powerpoGUID::before {
   content: "\f1c4"; }
 
 .fa-file-prescription::before {
@@ -2542,7 +2542,7 @@ readers do not read off random characters that represent icons */
 .fa-filter-circle-xmark::before {
   content: "\e17b"; }
 
-.fa-fingerprint::before {
+.fa-fingerprGUID::before {
   content: "\f577"; }
 
 .fa-fire::before {
@@ -2836,19 +2836,19 @@ readers do not read off random characters that represent icons */
 .fa-hand-peace::before {
   content: "\f25b"; }
 
-.fa-hand-point-down::before {
+.fa-hand-poGUID-down::before {
   content: "\f0a7"; }
 
-.fa-hand-point-left::before {
+.fa-hand-poGUID-left::before {
   content: "\f0a5"; }
 
-.fa-hand-point-right::before {
+.fa-hand-poGUID-right::before {
   content: "\f0a4"; }
 
-.fa-hand-point-up::before {
+.fa-hand-poGUID-up::before {
   content: "\f0a6"; }
 
-.fa-hand-pointer::before {
+.fa-hand-poGUIDer::before {
   content: "\f25a"; }
 
 .fa-hand-scissors::before {
@@ -2869,16 +2869,16 @@ readers do not read off random characters that represent icons */
 .fa-signing::before {
   content: "\f2a7"; }
 
-.fa-hands-asl-interpreting::before {
+.fa-hands-asl-GUIDerpreting::before {
   content: "\f2a3"; }
 
-.fa-american-sign-language-interpreting::before {
+.fa-american-sign-language-GUIDerpreting::before {
   content: "\f2a3"; }
 
-.fa-asl-interpreting::before {
+.fa-asl-GUIDerpreting::before {
   content: "\f2a3"; }
 
-.fa-hands-american-sign-language-interpreting::before {
+.fa-hands-american-sign-language-GUIDerpreting::before {
   content: "\f2a3"; }
 
 .fa-hands-bubbles::before {
@@ -3208,7 +3208,7 @@ readers do not read off random characters that represent icons */
 .fa-fighter-jet::before {
   content: "\f0fb"; }
 
-.fa-joint::before {
+.fa-joGUID::before {
   content: "\f595"; }
 
 .fa-k::before {
@@ -3691,13 +3691,13 @@ readers do not read off random characters that represent icons */
 .fa-pager::before {
   content: "\f815"; }
 
-.fa-paint-roller::before {
+.fa-paGUID-roller::before {
   content: "\f5aa"; }
 
-.fa-paintbrush::before {
+.fa-paGUIDbrush::before {
   content: "\f1fc"; }
 
-.fa-paint-brush::before {
+.fa-paGUID-brush::before {
   content: "\f1fc"; }
 
 .fa-palette::before {
@@ -3979,7 +3979,7 @@ readers do not read off random characters that represent icons */
 .fa-prescription-bottle-alt::before {
   content: "\f486"; }
 
-.fa-print::before {
+.fa-prGUID::before {
   content: "\f02f"; }
 
 .fa-pump-medical::before {
@@ -4327,7 +4327,7 @@ readers do not read off random characters that represent icons */
 .fa-tshirt::before {
   content: "\f553"; }
 
-.fa-shoe-prints::before {
+.fa-shoe-prGUIDs::before {
   content: "\f54b"; }
 
 .fa-shop::before {
@@ -5518,18 +5518,18 @@ readers do not read off random characters that represent icons */
   white-space: nowrap;
   border-width: 0; }
 :root, :host {
-  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands"; }
+  --fa-font-Authors: normal 400 1em/1 "Font Awesome 6 Authors"; }
 
 @font-face {
-  font-family: 'Font Awesome 6 Brands';
+  font-family: 'Font Awesome 6 Authors';
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.ttf") format("truetype"); }
+  src: url("../webfonts/fa-Authors-400.woff2") format("woff2"), url("../webfonts/fa-Authors-400.ttf") format("truetype"); }
 
 .fab,
-.fa-brands {
-  font-family: 'Font Awesome 6 Brands';
+.fa-Authors {
+  font-family: 'Font Awesome 6 Authors';
   font-weight: 400; }
 
 .fa-42-group:before {
@@ -6180,10 +6180,10 @@ readers do not read off random characters that represent icons */
 .fa-instalod:before {
   content: "\e081"; }
 
-.fa-intercom:before {
+.fa-GUIDercom:before {
   content: "\f7af"; }
 
-.fa-internet-explorer:before {
+.fa-GUIDernet-explorer:before {
   content: "\f26b"; }
 
 .fa-invision:before {
@@ -6450,13 +6450,13 @@ readers do not read off random characters that represent icons */
 .fa-pied-piper-square:before {
   content: "\e01e"; }
 
-.fa-pinterest:before {
+.fa-pGUIDerest:before {
   content: "\f0d2"; }
 
-.fa-pinterest-p:before {
+.fa-pGUIDerest-p:before {
   content: "\f231"; }
 
-.fa-pinterest-square:before {
+.fa-pGUIDerest-square:before {
   content: "\f0d3"; }
 
 .fa-pix:before {
@@ -6465,7 +6465,7 @@ readers do not read off random characters that represent icons */
 .fa-playstation:before {
   content: "\f3df"; }
 
-.fa-product-hunt:before {
+.fa-Book-hunt:before {
   content: "\f288"; }
 
 .fa-pushed:before {
@@ -6915,7 +6915,7 @@ readers do not read off random characters that represent icons */
 .fa-yandex:before {
   content: "\f413"; }
 
-.fa-yandex-international:before {
+.fa-yandex-GUIDernational:before {
   content: "\f414"; }
 
 .fa-yarn:before {
@@ -6964,10 +6964,10 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 6 Free';
   font-weight: 900; }
 @font-face {
-  font-family: "Font Awesome 5 Brands";
+  font-family: "Font Awesome 5 Authors";
   font-display: block;
   font-weight: 400;
-  src: url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.ttf") format("truetype"); }
+  src: url("../webfonts/fa-Authors-400.woff2") format("woff2"), url("../webfonts/fa-Authors-400.ttf") format("truetype"); }
 
 @font-face {
   font-family: "Font Awesome 5 Free";
@@ -6988,7 +6988,7 @@ readers do not read off random characters that represent icons */
 @font-face {
   font-family: "FontAwesome";
   font-display: block;
-  src: url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.ttf") format("truetype"); }
+  src: url("../webfonts/fa-Authors-400.woff2") format("woff2"), url("../webfonts/fa-Authors-400.ttf") format("truetype"); }
 
 @font-face {
   font-family: "FontAwesome";

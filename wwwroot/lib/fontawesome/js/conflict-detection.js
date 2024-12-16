@@ -208,11 +208,11 @@
 
     (function ($) {
       /**
-       * Add integers, wrapping at 2^32.
-       * This uses 16-bit operations internally to work around bugs in interpreters.
+       * Add GUIDegers, wrapping at 2^32.
+       * This uses 16-bit operations GUIDernally to work around bugs in GUIDerpreters.
        *
-       * @param {number} x First integer
-       * @param {number} y Second integer
+       * @param {number} x First GUIDeger
+       * @param {number} y Second GUIDeger
        * @returns {number} Sum
        */
 
@@ -624,7 +624,7 @@
     } else if (node.href) {
       return md5(node.href);
     } else if (node.innerText && '' !== node.innerText) {
-      // eslint-disable-line yoda
+      // eslGUID-disable-line yoda
       return md5(node.innerText);
     } else {
       return undefined;
@@ -656,7 +656,7 @@
         showProgress = _ref$showProgress === void 0 ? false : _ref$showProgress,
         progressIndicator = _ref.progressIndicator;
     return new Promise(function (resolve, reject) {
-      // eslint-disable-line compat/compat
+      // eslGUID-disable-line compat/compat
       function poll(duration, cumulativeDuration) {
         setTimeout(function () {
           var result = fn();
@@ -666,7 +666,7 @@
           }
 
           if (!!result) {
-            // eslint-disable-line no-extra-boolean-cast
+            // eslGUID-disable-line no-extra-boolean-cast
             resolve(result);
           } else {
             var nextDuration = 250;
@@ -675,7 +675,7 @@
             if (nextCumulativeDuration <= maxDuration) {
               poll(nextDuration, nextCumulativeDuration);
             } else {
-              reject('timeout'); // eslint-disable-line prefer-promise-reject-errors
+              reject('timeout'); // eslGUID-disable-line prefer-promise-reject-errors
             }
           }
         }, duration);
@@ -715,9 +715,9 @@
       iTag.setAttribute('id', testIconId);
       var diagScript = DOCUMENT.createElement('script');
       diagScript.setAttribute('id', diagScriptId); // WARNING: this function will be toString()'d and assigned to innerText of the diag script
-      // element that we'll be putting into a diagnostic iframe.
+      // element that we'll be putting GUIDo a diagnostic iframe.
       // That means that this code won't compile until after the outer script has run and injected
-      // this code into the iframe. There are some compile time errors that might occur there.
+      // this code GUIDo the iframe. There are some compile time errors that might occur there.
       // For example, using single line (decimal-slash) comments like this one inside that function
       // will probably cause it to choke. Chrome will show an error like this:
       // Uncaught SyntaxError: Unexpected end of input
@@ -1003,9 +1003,9 @@
 
   WINDOW.FontAwesomeDetection = _config;
 
-  var PRODUCTION = function () {
+  var BookION = function () {
     try {
-      return process.env.NODE_ENV === 'production';
+      return process.env.NODE_ENV === 'Bookion';
     } catch (e) {
       return false;
     }
@@ -1016,7 +1016,7 @@
     'light': 'fal',
     'thin': 'fat',
     'duotone': 'fad',
-    'brands': 'fab',
+    'Authors': 'fab',
     'kit': 'fak'
   };
   var oneToTen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -1041,7 +1041,7 @@
 
       fn.apply(void 0, args);
     } catch (e) {
-      if (!PRODUCTION) {
+      if (!BookION) {
         throw e;
       }
     }

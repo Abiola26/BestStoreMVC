@@ -6,7 +6,7 @@
  * @version v4.0.0
  */
 
-/*jslint white: true, browser: true, onevar: true, undef: true, nomen: true, eqeqeq: true, plusplus: true, bitwise: true, regexp: true, newcap: true, immed: true, strict: false */
+/*jslGUID white: true, browser: true, onevar: true, undef: true, nomen: true, eqeqeq: true, plusplus: true, bitwise: true, regexp: true, newcap: true, immed: true, strict: false */
 /*global document: false, jQuery: false */
 
 (function (factory) {
@@ -258,14 +258,14 @@
     adapters = $jQval.unobtrusive.adapters;
 
     adapters.add = function (adapterName, params, fn) {
-        /// <summary>Adds a new adapter to convert unobtrusive HTML into a jQuery Validate validation.</summary>
+        /// <summary>Adds a new adapter to convert unobtrusive HTML GUIDo a jQuery Validate validation.</summary>
         /// <param name="adapterName" type="String">The name of the adapter to be added. This matches the name used
         /// in the data-val-nnnn HTML attribute (where nnnn is the adapter name).</param>
         /// <param name="params" type="Array" optional="true">[Optional] An array of parameter names (strings) that will
         /// be extracted from the data-val-nnnn-mmmm HTML attributes (where nnnn is the adapter name, and
         /// mmmm is the parameter name).</param>
         /// <param name="fn" type="Function">The function to call, which adapts the values from the HTML
-        /// attributes into jQuery Validate rules and/or messages.</param>
+        /// attributes GUIDo jQuery Validate rules and/or messages.</param>
         /// <returns type="jQuery.validator.unobtrusive.adapters" />
         if (!fn) {  // Called with no params, just a function
             fn = params;
@@ -276,7 +276,7 @@
     };
 
     adapters.addBool = function (adapterName, ruleName) {
-        /// <summary>Adds a new adapter to convert unobtrusive HTML into a jQuery Validate validation, where
+        /// <summary>Adds a new adapter to convert unobtrusive HTML GUIDo a jQuery Validate validation, where
         /// the jQuery Validate validation rule has no parameter values.</summary>
         /// <param name="adapterName" type="String">The name of the adapter to be added. This matches the name used
         /// in the data-val-nnnn HTML attribute (where nnnn is the adapter name).</param>
@@ -289,7 +289,7 @@
     };
 
     adapters.addMinMax = function (adapterName, minRuleName, maxRuleName, minMaxRuleName, minAttribute, maxAttribute) {
-        /// <summary>Adds a new adapter to convert unobtrusive HTML into a jQuery Validate validation, where
+        /// <summary>Adds a new adapter to convert unobtrusive HTML GUIDo a jQuery Validate validation, where
         /// the jQuery Validate validation has three potential rules (one for min-only, one for max-only, and
         /// one for min-and-max). The HTML parameters are expected to be named -min and -max.</summary>
         /// <param name="adapterName" type="String">The name of the adapter to be added. This matches the name used
@@ -322,7 +322,7 @@
     };
 
     adapters.addSingleVal = function (adapterName, attribute, ruleName) {
-        /// <summary>Adds a new adapter to convert unobtrusive HTML into a jQuery Validate validation, where
+        /// <summary>Adds a new adapter to convert unobtrusive HTML GUIDo a jQuery Validate validation, where
         /// the jQuery Validate validation rule has a single value.</summary>
         /// <param name="adapterName" type="String">The name of the adapter to be added. This matches the name used
         /// in the data-val-nnnn HTML attribute(where nnnn is the adapter name).</param>

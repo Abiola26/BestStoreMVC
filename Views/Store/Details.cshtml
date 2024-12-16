@@ -1,14 +1,14 @@
-﻿@model Product
-@{
-}
+﻿@using BestStoreMVC.Entity
+@model BestStoreMVC.Dto.BookDto
+
 
 
 <div class="row">
     <div class="col-md-4 text-center">
-        <img src="/products/@Model.ImageFileName" class="img-fluid mb-3" alt="..." width="250" />
+        <img src="/Books/@Model.ImageFileName" class="img-fluid mb-3" alt="..." width="250" />
     </div>
     <div class="col-md-8">
-        <h3 class="mb-3">@Model.Name</h3>
+        <h3 class="mb-3">@Model.Title</h3>
         <h3 class="mb-3">@(Model.Price)$</h3>
         <button type="button" class="btn btn-warning btn-sm" onclick="addToCart(this, @Model.Id)">
             Add to Cart <i class="bi bi-cart4"></i>
@@ -18,10 +18,19 @@
 
         <div class="row mb-3">
             <div class="col-sm-3 fw-bold">
-                Brand
+                Author
             </div>
             <div class="col-sm-9">
-                @Model.Brand
+                @Model.Author
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-3 fw-bold">
+                ISBN
+            </div>
+            <div class="col-sm-9">
+                @Model.ISBN
             </div>
         </div>
 
@@ -30,7 +39,25 @@
                 Category
             </div>
             <div class="col-sm-9">
-                @Model.Category
+                @Model.CategoryName
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-3 fw-bold">
+                Pages
+            </div>
+            <div class="col-sm-9">
+                @Model.Pages
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-3 fw-bold">
+                Language
+            </div>
+            <div class="col-sm-9">
+                @Model.Language
             </div>
         </div>
 

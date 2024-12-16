@@ -1,6 +1,8 @@
-﻿using BestStoreMVC.Models;
-using BestStoreMVC.Services;
+﻿using BestStoreMVC.Data;
+using BestStoreMVC.Dto;
+using BestStoreMVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace BestStoreMVC.Controllers
@@ -16,8 +18,22 @@ namespace BestStoreMVC.Controllers
 
         public IActionResult Index()
         {
-            var products = context.Products.OrderByDescending(p => p.Id).Take(4).ToList();
-            return View(products);
+            var books = context.Books
+        .Include(b => b.Category) // Include Category to get CategoryName
+        .OrderByDescending(p => p.Id)
+        .Take(4)
+        .Select(b => new BookDto
+        {
+            Id = b.Id, // `Id` as GUID
+            Title = b.Title,
+            Author = b.Author,
+            CategoryName = b.Category.Name, // Adjusted for Category navigation property
+            Price = b.Price,
+            ImageFileName = b.ImageFileName // Adjust to match your entity's property
+        })
+        .ToList();
+
+            return View(books);
         }
 
         public IActionResult Privacy()

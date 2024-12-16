@@ -1,0 +1,56 @@
+﻿@model IEnumerable<BestStoreMVC.Dto.CategoryDto>
+
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Category List</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <!-- Action Buttons Section -->
+        <div class="row pb-3">
+            <div class="col-6">
+                <!-- Optional: Add search or filter options here if needed -->
+            </div>
+            <div class="col-6 text-end">
+                <!-- Create New Category Button -->
+                <a asp-controller="Category" asp-action="Create" class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i> Create New Category
+                </a>
+            </div>
+        </div>
+
+        <!-- Category Table -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th>Category Name</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+                <tbody>
+                    @foreach (var obj in Model)
+                    {
+                        <tr>
+                            <td>@obj.Name</td>
+                            <td class="text-center">
+                                <!-- Action Buttons: Edit and Delete -->
+                                <div class="btn-group" role="group">
+                                    <a asp-controller="Category" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-primary btn-sm mx-1">
+                                        <i class="bi bi-pencil-square"></i> Edit
+                                    </a>
+                                    <form asp-action="DeleteCategory" asp-controller="Category" asp-route-id="@obj.Id" method="post" style="display:inline;">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
